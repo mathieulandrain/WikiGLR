@@ -1,0 +1,28 @@
+{
+  "name": "wikiglr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "author": "Mathieu Landrain",
+  "license": "ISC",
+  "dependencies": {
+    "chrome-launcher": "^0.13.2",
+    "discord-giveaways": "^4.1.8",
+    "discord.js": "^12.2.0",
+    "fs": "0.0.1-security",
+    "jsdom": "^16.2.2",
+    "moment": "^2.24.0",
+    "node": "^12.16.2",
+    "node-gyp-build": "^4.2.2",
+    "nodemon": "^2.0.3",
+    "puppeteer": "^3.3.0",
+    "snekfetch": "^4.0.4",
+    "superagent": "^5.2.2",
+    "utip.io": "^1.0.5",
+    "weather-js": "^2.0.0"
+  }
+}
