@@ -84,7 +84,7 @@ module.exports.run = (client, message, args, tools) => {
 module.exports.help = {
   name: "buildunlock",
   aliases: ["buildinglevelunlock", "blu"],
-  category: "📜 - wiki",
+  category: "📡 - buildings",
   description: `${lang.WIKI_desc}`,
   usage: "",
 };

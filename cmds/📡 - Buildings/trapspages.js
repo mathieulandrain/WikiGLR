@@ -83,7 +83,7 @@ module.exports.run = (client, message, args, tools) => {
 module.exports.help = {
   name: "traps",
   aliases: ["trap", "piège", "pièges"],
-  category: "📜 - wiki",
+  category: "📡 - buildings",
   description: `${lang.WIKI_desc}`,
   usage: "",
 };

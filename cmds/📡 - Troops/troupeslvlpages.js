@@ -93,9 +93,9 @@ module.exports.run = (client, message, args, tools) => {
 };
 // ◀️ ▶️
 module.exports.help = {
-  name: "troupes",
-  aliases: ["tpage"],
-  category: "📜 - wiki",
+  name: "troopslvlunlock",
+  aliases: ["tlu"],
+  category: "📡 - troops",
   description: `${lang.WIKI_desc}`,
   usage: "",
 };

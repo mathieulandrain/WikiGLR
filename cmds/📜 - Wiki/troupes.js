@@ -4,6 +4,7 @@ const emotes = require("../../assets/json/emotes.json");
 const lang = require("../../assets/lang/english.json");
 
 module.exports.run = (bot, message, args) => {
+  // pk look ici ???
   const embed = new MessageEmbed()
     .setColor(colours.green_light)
     .setTitle(`${emotes.colosse} - ${lang.Troops}`) // look ici ^^
