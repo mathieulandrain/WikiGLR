@@ -3,29 +3,31 @@ const { version } = require("../../package.json");
 const colours = require("../../assets/json/colours.json");
 const emotes = require("../../assets/json/emotes.json");
 const { prefix } = require("../../config.json");
+const lang = require("../../assets/lang/english.json");
 
 module.exports.run = (bot, message, args) => {
   const embed = new MessageEmbed()
     .setColor(colours.green_light)
-    .setTitle(`${emotes.glr} - Autres`)
+    .setTitle(`${emotes.glr} - ${lang.Autres}`)
     .setThumbnail(bot.user.avatarURL())
-    .setDescription(
-      `Ici vous aurez accès aux pages pour les autres c'est à dire tout ce qui entre pas dans les catégories précedentes.`
-    )
+    .setDescription(`${lang.Autres_DESCRIPTION}`)
     .addField(
-      `${emotes.glr} - Autres:`,
-      `${emotes.chips} - [Levels](https://galaxylife.fandom.com/wiki/Player_Level_Progression)\n${emotes.base} - [Niveau pour débloquer les bâtiments](https://galaxylife.fandom.com/wiki/Star_Base#Building_Level_Unlocks)\n${emotes.labo} - [Niveau pour débloquer les troupes](https://galaxylife.fandom.com/wiki/Laboratory#Troop_Level_Unlocks)\n${emotes.alliance} - [Alliances](https://galaxylife.fandom.com/wiki/Alliances)`
+      `${emotes.glr} - ${lang.Autres}:`,
+      `${emotes.chips} - [${lang.Level}](${lang.Level_link})\n${emotes.base} - [${lang.Buildinglvlunlock}](${lang.Buildinglvlunlock_link})\n${emotes.labo} - [${lang.Troopslvlunlock}](${lang.Troopslvlunlock_link})\n${emotes.alliance} - [${lang.Alliances}](${lang.Alliances_link})\n${emotes.Craft} - [${lang.Craft}](${lang.Craft_link})`
     )
 
-    .setFooter(`No Limit | Wiki - Autres`, bot.user.displayAvatarURL());
+    .setFooter(
+      `${lang.Bot_name} | ${lang.Autres}`,
+      bot.user.displayAvatarURL()
+    );
 
   message.channel.send(embed);
 };
 
 module.exports.help = {
-  name: "autres",
-  aliases: ["autre", "level", "alliance"],
+  name: "misc",
+  aliases: ["craft", "level", "alliance", "levelunlock"],
   category: "📜 - wiki",
-  description: "Renvoie les infos sur GLR",
+  description: `${lang.WIKI_desc}`,
   usage: "",
 };

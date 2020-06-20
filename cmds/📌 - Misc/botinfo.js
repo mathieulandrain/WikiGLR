@@ -42,18 +42,13 @@ module.exports.run = (bot, message, args) => {
       },
       { name: "⚙️ - Version:", value: `${package.version}`, inline: true },
       {
-        name: "📖 - Code Source:",
-        value: `[Available on GitHub](https://github.com/mathieulandrain/No-Limit-v2)`,
-        inline: true,
-      },
-      {
         name: "🆘 - Support:",
-        value: `[Server Invite](https://github.com/mathieulandrain)`,
+        value: `[Server Invite](https://discord.gg/VTYaxAk)`,
         inline: true,
       },
       {
         name: `${emotes.invite} - ${lang.Invite}:`,
-        value: `[${lang.Invite_link}](https://github.com/mathieulandrain)`,
+        value: `[${lang.Invite_link}](https://discordapp.com/oauth2/authorize?client_id=723611271458586657&scope=bot&permissions=523328)`,
         inline: true,
       },
       {
@@ -67,7 +62,7 @@ module.exports.run = (bot, message, args) => {
         inline: true,
       }
     )
-    .setFooter(`No Limit | Botinfo`, bot.user.displayAvatarURL());
+    .setFooter(`${lang.Bot_name} | Botinfo`, bot.user.displayAvatarURL());
 
   message.channel.send(embed);
 };
@@ -76,6 +71,6 @@ module.exports.help = {
   name: "botinfo",
   aliases: ["botinfo"],
   category: "📌 - misc",
-  description: "Renvoie les infos du bot",
+  description: `${lang.Botinfo_desc}`,
   usage: "",
 };
