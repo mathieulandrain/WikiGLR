@@ -1,12 +1,12 @@
 <img width="150" height="150" align="left" style="float: left; margin: 0 10px 0 0;" alt="NoLimit" src="https://i.goopics.net/7Ko7N.jpg">
 
-# No Limit
+# WikiGLR
 
 [![](https://img.shields.io/discord/716914717377167370.svg?logo=discord&colorB=7289DA)](https://discord.gg/WtpXSCq)
 [![](https://img.shields.io/badge/discord.js-v12.0.0--dev-blue.svg?logo=npm)](https://github.com/discordjs)
 [![](https://img.shields.io/badge/patreon-donate-orange.svg)](https://www.patreon.com/mathieulandrain)
 
-NoLimit is a open source Discord bot coded in JavaScript with [Discord.js](https://discord.js.org) by [Mathieu Landrain](https://github.com/mathieulandrain).  
+WikiGLR is a Discord bot coded in JavaScript with [Discord.js](https://discord.js.org) by [Mathieu Landrain](https://github.com/mathieulandrain).  
 Feel free to add a star ⭐ to the repository to promote the project!
 
 ## Contributing
