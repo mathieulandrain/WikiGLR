@@ -35,10 +35,10 @@ module.exports.run = (client, message, args, tools) => {
     msg.react("724429073778081900").then((r) => {
       msg.react("724429073765630154");
 
-      const backawardsFilter = (reaction, user) =>
-        reaction.emoji.name === "gb" && user.id === message.author.id;
-      const forwardsFilter = (reaction, user) =>
-        reaction.emoji.name === "forward" && user.id === message.author.id;
+      const backawardsFilter = (reaction, user, bot) =>
+        reaction.emoji.name === "gb" && user.id !== client.user.id;
+      const forwardsFilter = (reaction, user, bot) =>
+        reaction.emoji.name === "forward" && user.id !== client.user.id;
 
       const backawards = msg.createReactionCollector(backawardsFilter, {
         time: 600000,
@@ -48,35 +48,45 @@ module.exports.run = (client, message, args, tools) => {
       });
 
       backawards.on("collect", async (r, user) => {
-        if (page === 1) return;
-        page--;
-        embed.setDescription(pages[page - 1]);
-        embed.setTitle(title[page - 1]);
-        embed.setURL(url[page - 1]);
-        embed.setImage(image[page - 1]);
-        embed.setAuthor(client.user.username, client.user.avatarURL());
-        embed.setThumbnail(client.user.displayAvatarURL());
-        embed.setFooter(
-          `${lang.Bot_name} | Page ${page} of ${pages.length} | ${lang.Information}`
-        );
-        await r.users.remove(user);
-        msg.edit(embed);
+        if (user.id !== message.author.id) {
+          await r.users.remove(user);
+          console.log(r);
+        } else {
+          if (page === 1) return;
+          page--;
+          embed.setDescription(pages[page - 1]);
+          embed.setTitle(title[page - 1]);
+          embed.setURL(url[page - 1]);
+          embed.setImage(image[page - 1]);
+          embed.setAuthor(client.user.username, client.user.avatarURL());
+          embed.setThumbnail(client.user.displayAvatarURL());
+          embed.setFooter(
+            `${lang.Bot_name} | Page ${page} of ${pages.length} | ${lang.Information}`
+          );
+          await r.users.remove(user);
+          msg.edit(embed);
+        }
       });
 
       forwards.on("collect", async (r, user) => {
-        if (page === pages.length) return;
-        page++;
-        embed.setDescription(pages[page - 1]);
-        embed.setTitle(title[page - 1]);
-        embed.setURL(url[page - 1]);
-        embed.setImage(image[page - 1]);
-        embed.setAuthor(client.user.username, client.user.avatarURL());
-        embed.setThumbnail(client.user.displayAvatarURL());
-        embed.setFooter(
-          `${lang.Bot_name} | Page ${page} of ${pages.length} | ${lang.Information}`
-        );
-        await r.users.remove(user);
-        msg.edit(embed);
+        if (user.id !== message.author.id) {
+          await r.users.remove(user);
+          console.log(r);
+        } else {
+          if (page === pages.length) return;
+          page++;
+          embed.setDescription(pages[page - 1]);
+          embed.setTitle(title[page - 1]);
+          embed.setURL(url[page - 1]);
+          embed.setImage(image[page - 1]);
+          embed.setAuthor(client.user.username, client.user.avatarURL());
+          embed.setThumbnail(client.user.displayAvatarURL());
+          embed.setFooter(
+            `${lang.Bot_name} | Page ${page} of ${pages.length} | ${lang.Information}`
+          );
+          await r.users.remove(user);
+          msg.edit(embed);
+        }
       });
     });
   });

@@ -67,7 +67,7 @@ module.exports.run = (bot, message, args) => {
 
 module.exports.help = {
   name: "help",
-  aliases: ["help"],
+  aliases: ["help", "helpfr"],
   category: "📌 - misc",
   description: `${lang.Help_desc}`,
   usage: "",

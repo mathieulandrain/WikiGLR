@@ -136,5 +136,8 @@
   "Defense_link": "https://galaxylife.fandom.com/wiki/Category:Defensive_Buildings",
   "Deco_link": "https://galaxylife.fandom.com/wiki/Decorations",
   "piegeBleu": "Bleu Trap",
-  "piegeVolant": "Fly Trap"
+  "piegeVolant": "Fly Trap",
+  "friends": "Friends",
+  "Howto": "How to add friends :",
+  "friendsDescription": "If you want random people to add you as a friend, go to <#700717164273074266> and type !profile <your username>.\nIf you want specific people to add you, just give them your galaxylifereborn.com/profile/<your username>. \n\n⚠️ - Please do not include the < >, and note that the website is case sensitive."
 }
