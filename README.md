@@ -2,7 +2,7 @@
 
 # WikiGLR
 
-[![](https://img.shields.io/discord/716914717377167370.svg?logo=discord&colorB=7289DA)](https://discord.gg/WtpXSCq)
+[![](https://img.shields.io/discord/723899084867633212.svg?logo=discord&colorB=7289DA)](https://discord.gg/VTYaxAk)
 [![](https://img.shields.io/badge/discord.js-v12.0.0--dev-blue.svg?logo=npm)](https://github.com/discordjs)
 [![](https://img.shields.io/badge/patreon-donate-orange.svg)](https://www.patreon.com/mathieulandrain)
 
