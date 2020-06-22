@@ -26,7 +26,7 @@ module.exports.run = (bot, message, args) => {
 
 module.exports.help = {
   name: "warpgate",
-  aliases: ["wg", "gate"],
+  aliases: ["wg", "gate", "portail", "portail de téléportation"],
   category: "📡 - buildings",
   description: `${lang.Information_desc}`,
   usage: "",

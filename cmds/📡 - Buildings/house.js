@@ -26,7 +26,7 @@ module.exports.run = (bot, message, args) => {
 
 module.exports.help = {
   name: "house",
-  aliases: ["compacthouse"],
+  aliases: ["compacthouse", "maison"],
   category: "📡 - buildings",
   description: `${lang.Information_desc}`,
   usage: "",

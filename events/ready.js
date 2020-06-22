@@ -6,13 +6,13 @@ module.exports = async (bot) => {
 
   let statuses = [
     `${prefix}help`,
-    `Online at ${bot.guilds.cache.size} servers`,
+    `Online on ${bot.guilds.cache.size} servers`,
   ];
 
   setInterval(function () {
     let statuses = [
       `${prefix}help`,
-      `Online at ${bot.guilds.cache.size} servers`,
+      `Online on ${bot.guilds.cache.size} servers`,
     ];
     let status = statuses[Math.floor(Math.random() * statuses.length)];
     bot.user.setActivity(status, { type: "WATCHING" });

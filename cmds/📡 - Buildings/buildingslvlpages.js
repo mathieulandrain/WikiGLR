@@ -33,13 +33,13 @@ module.exports.run = (client, message, args, tools) => {
     .setImage(image[page - 1]);
 
   message.channel.send(embed).then((msg) => {
-    msg.react("◀️").then((r) => {
-      msg.react("▶️");
+    msg.react("724429073778081900").then((r) => {
+      msg.react("724429073765630154");
 
       const backawardsFilter = (reaction, user) =>
-        reaction.emoji.name === "◀️" && user.id === message.author.id;
+        reaction.emoji.name === "gb" && user.id === message.author.id;
       const forwardsFilter = (reaction, user) =>
-        reaction.emoji.name === "▶️" && user.id === message.author.id;
+        reaction.emoji.name === "forward" && user.id === message.author.id;
 
       const backawards = msg.createReactionCollector(backawardsFilter, {
         time: 600000,
@@ -48,7 +48,7 @@ module.exports.run = (client, message, args, tools) => {
         time: 600000,
       });
 
-      backawards.on("collect", (r) => {
+      backawards.on("collect", async (r, user) => {
         if (page === 1) return;
         page--;
         embed.setDescription(pages[page - 1]);
@@ -60,10 +60,11 @@ module.exports.run = (client, message, args, tools) => {
         embed.setFooter(
           `${lang.Bot_name} | Page ${page} of ${pages.length} | ${lang.Information}`
         );
+        await r.users.remove(user);
         msg.edit(embed);
       });
 
-      forwards.on("collect", (r) => {
+      forwards.on("collect", async (r, user) => {
         if (page === pages.length) return;
         page++;
         embed.setDescription(pages[page - 1]);
@@ -76,14 +77,15 @@ module.exports.run = (client, message, args, tools) => {
           `${lang.Bot_name} | Page ${page} of ${pages.length} | ${lang.Information}`
         );
         msg.edit(embed);
+        await r.users.remove(user);
       });
     });
   });
 };
-// ◀️ ▶️
+// 724429073778081900 724429073765630154
 module.exports.help = {
   name: "buildunlock",
-  aliases: ["buildinglevelunlock", "blu"],
+  aliases: ["buildinglevelunlock", "blu", "batiments", "debloquer batiments"],
   category: "📡 - buildings",
   description: `${lang.WIKI_desc}`,
   usage: "",
