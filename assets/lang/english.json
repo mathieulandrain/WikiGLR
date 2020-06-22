@@ -138,6 +138,9 @@
   "piegeBleu": "Bleu Trap",
   "piegeVolant": "Fly Trap",
   "friends": "Friends",
-  "Howto": "How to add friends :",
-  "friendsDescription": "If you want random people to add you as a friend, go to <#700717164273074266> and type !profile <your username>.\nIf you want specific people to add you, just give them your galaxylifereborn.com/profile/<your username>. \n\n⚠️ - Please do not include the < >, and note that the website is case sensitive."
+  "Howto": "How to add friends:",
+  "friendsDescription": "If you want random people to add you as a friend, go to <#700717164273074266> and type !profile <your username>.\nIf you want specific people to add you, just give them your galaxylifereborn.com/profile/<your username>. \n\n⚠️ - Please do not include the < >, and note that the website is case sensitive.",
+  "PA": "Pocket Adventures",
+  "HowtoPA": "How to play Pocket Adventures:",
+  "PADesc": "The Pocket Edition is the mobile version of Galaxy Life Reborn, it can be installed thanks to the apk available on the [site](https://galaxylifereborn.com/home).\nTherefore it is only available on android at the moment."
 }
