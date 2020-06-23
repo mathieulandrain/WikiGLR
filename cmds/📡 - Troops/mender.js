@@ -35,13 +35,13 @@ module.exports.run = (bot, message, args) => {
     .setColor(colours.green_light)
     .setAuthor(bot.user.username, bot.user.avatarURL())
     .setDescription(
-      `${emotes.Info} - ${lang.Infomation_DESCRIPTION} - ${emotes.falcon}`
+      `${emotes.Info} - ${lang.Infomation_DESCRIPTION} - ${emotes.Mender}`
     )
     .setThumbnail(bot.user.displayAvatarURL())
-    .setTitle(`${lang.Information} - ${lang.Falcon}`)
-    .setURL(`${lang.Falcon_link}`)
-    .attachFiles(["./assets/img/Troops/falcon.png"])
-    .setImage("attachment://falcon.png")
+    .setTitle(`${lang.Information} - ${lang.Mender}`)
+    .setURL(`${lang.Mender_link}`)
+    .attachFiles(["./assets/img/Troops/mender.png"])
+    .setImage("attachment://mender.png")
     .setFooter(
       `${lang.Bot_name} | ${lang.Information}`,
       bot.user.displayAvatarURL()
@@ -51,8 +51,8 @@ module.exports.run = (bot, message, args) => {
 };
 
 module.exports.help = {
-  name: "falcon",
-  aliases: ["falcon"],
+  name: "mender",
+  aliases: ["menders"],
   category: "📡 - troops",
   description: `${lang.Troops_desc}`,
   cooldown: 0,

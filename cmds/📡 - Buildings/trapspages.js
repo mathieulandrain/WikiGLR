@@ -122,7 +122,7 @@ module.exports.help = {
   name: "traps",
   aliases: ["trap", "piège", "pièges", "piege"],
   category: "📡 - buildings",
-  description: `${lang.WIKI_desc}`,
+  description: `${lang.Build_desc}`,
   cooldown: 0,
   usage: "",
 };

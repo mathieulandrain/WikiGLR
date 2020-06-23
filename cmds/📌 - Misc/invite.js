@@ -50,7 +50,7 @@ module.exports.help = {
   name: "invite",
   aliases: ["invite"],
   category: "📌 - misc",
-  description: `${lang.Botinfo_desc}`,
+  description: `Links to invite the bot on your server.`,
   cooldown: 0,
   usage: "",
 };

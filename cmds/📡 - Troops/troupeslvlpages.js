@@ -134,7 +134,7 @@ module.exports.help = {
   name: "troopslvlunlock",
   aliases: ["tlu", "debloquer troupes", "niveau troupes", "lvl troupes"],
   category: "📡 - troops",
-  description: `${lang.WIKI_desc}`,
+  description: `${lang.Troops_desc}`,
   cooldown: 0,
   usage: "",
 };

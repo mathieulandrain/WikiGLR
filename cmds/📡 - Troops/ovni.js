@@ -54,7 +54,7 @@ module.exports.help = {
   name: "hoover",
   aliases: ["hooverufo", "ovni", "OVNI"],
   category: "📡 - troops",
-  description: `${lang.Information_desc}`,
+  description: `${lang.Troops_desc}`,
   cooldown: 0,
   usage: "",
 };

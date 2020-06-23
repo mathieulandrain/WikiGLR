@@ -54,7 +54,7 @@ module.exports.help = {
   name: "mine",
   aliases: ["mine"],
   category: "📡 - buildings",
-  description: `${lang.Information_desc}`,
+  description: `${lang.Build_desc}`,
   cooldown: 0,
   usage: "",
 };

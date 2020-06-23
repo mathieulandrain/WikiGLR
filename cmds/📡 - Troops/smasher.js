@@ -60,7 +60,7 @@ module.exports.help = {
     "mercenaire",
   ],
   category: "📡 - troops",
-  description: `${lang.Information_desc}`,
+  description: `${lang.Troops_desc}`,
   cooldown: 0,
   usage: "",
 };

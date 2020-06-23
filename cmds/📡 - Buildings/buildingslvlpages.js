@@ -122,7 +122,7 @@ module.exports.help = {
   name: "buildunlock",
   aliases: ["buildinglevelunlock", "blu", "batiments", "debloquer batiments"],
   category: "📡 - buildings",
-  description: `${lang.WIKI_desc}`,
+  description: `${lang.Build_desc}`,
   cooldown: 0,
   usage: "",
 };

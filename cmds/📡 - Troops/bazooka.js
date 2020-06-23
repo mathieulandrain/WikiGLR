@@ -54,7 +54,7 @@ module.exports.help = {
   name: "bazooka",
   aliases: ["zooka", "zook"],
   category: "📡 - troops",
-  description: `${lang.Information_desc}`,
+  description: `${lang.Troops_desc}`,
   cooldown: 0,
   usage: "",
 };

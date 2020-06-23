@@ -54,7 +54,7 @@ module.exports.help = {
   name: "wasp",
   aliases: ["wasp", "guepe", "guêpe"],
   category: "📡 - troops",
-  description: `${lang.Information_desc}`,
+  description: `${lang.Troops_desc}`,
   cooldown: 0,
   usage: "",
 };

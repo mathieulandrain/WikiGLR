@@ -54,7 +54,7 @@ module.exports.help = {
   name: "starport",
   aliases: ["sp", "port", "port spatial"],
   category: "📡 - buildings",
-  description: `${lang.Information_desc}`,
+  description: `${lang.Build_desc}`,
   cooldown: 0,
   usage: "",
 };

@@ -54,7 +54,7 @@ module.exports.help = {
   name: "warpgate",
   aliases: ["wg", "gate", "portail", "portail de téléportation"],
   category: "📡 - buildings",
-  description: `${lang.Information_desc}`,
+  description: `${lang.Build_desc}`,
   cooldown: 0,
   usage: "",
 };
