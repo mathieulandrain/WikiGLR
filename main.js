@@ -30,31 +30,6 @@ bot.on("message", async (message) => {
     );
   if (!command) return;
 
-  if (command.help.permissions && !message.member.hasPermission("BAN_MEMBERS"))
-    return message.reply(
-      "tu n'as pas les permissions pour taper cette commande."
-    );
-
-  if (command.help.args && !args.length) {
-    let noArgsReply = `Il nous faut des arguments pour cette commande, ${message.author}!`;
-
-    if (command.help.usage)
-      noArgsReply += `\nVoici comment utiliser la commande: \`${config.prefix}${command.help.name} ${command.help.usage}\``;
-
-    return message.channel.send(noArgsReply);
-  }
-
-  if (command.help.isUserAdmin && !user)
-    return message.reply("il faut mentionner un utilisateur.");
-
-  if (
-    command.help.isUserAdmin &&
-    message.guild.member(user).hasPermission("BAN_MEMBERS")
-  )
-    return message.reply(
-      "tu ne peux pas utiliser cette commande sur cet utilisateur."
-    );
-
   if (!bot.cooldowns.has(command.help.name)) {
     bot.cooldowns.set(command.help.name, new Collection());
   }
