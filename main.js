@@ -61,7 +61,7 @@ bot.on("message", async (message) => {
 
   const timeNow = Date.now();
   const tStamps = bot.cooldowns.get(command.help.name);
-  const cdAmount = (command.help.cooldown || 5) * 1000;
+  const cdAmount = (command.help.cooldown || 0) * 1000;
 
   if (tStamps.has(message.author.id)) {
     const cdExpirationTime = tStamps.get(message.author.id) + cdAmount;
