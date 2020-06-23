@@ -24,5 +24,6 @@ module.exports.help = {
   aliases: ["friends", "f", "ami", "amis"],
   category: "📌 - misc",
   description: `how to invite some friends on GLR`,
+  cooldown: 30,
   usage: "",
 };

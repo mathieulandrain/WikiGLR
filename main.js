@@ -1,13 +1,13 @@
-const Discord = require("discord.js");
-const bot = new Discord.Client();
+const { Client, Collection } = require("discord.js");
+const bot = new Client();
 const config = require("./config.json");
-const chan = require("./assets/json/channels.json");
+const emotes = require("./assets/json/emotes.json");
 const moment = require("moment");
 const { loadCommands, loadEvents } = require("./util/loader");
 moment.locale("fr");
 const cdseconds = 5;
 
-bot.commands = new Discord.Collection();
+["commands", "cooldowns"].forEach((x) => (bot[x] = new Collection()));
 
 loadCommands(bot);
 loadEvents(bot);
@@ -18,45 +18,72 @@ bot.on("message", async (message) => {
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;
   if (!message.content.startsWith(config.prefix)) return;
-  var interdit = [
-    `${chan.Test}`,
-    `${chan.chat_deutsch}`,
-    `${chan.chat_english}`,
-    `${chan.chat_español}`,
-    `${chan.chat_français}`,
-    `${chan.chat_italiano}`,
-    `${chan.chat_nederlands}`,
-    `${chan.chat_polski}`,
-    `${chan.chat_portugês}`,
-    `${chan.donator_chat}`,
-    `${chan.galaxy_life_bases}`,
-    `${chan.galaxy_life_chat}`,
-    `${chan.galaxy_life_fanart}`,
-    `${chan.galaxy_life_friends}`,
-    `${chan.galaxy_life_issues}`,
-    `${chan.galaxy_life_memes}`,
-    `${chan.the_meme_room}`,
-    `${chan.vc_music}`,
-  ];
 
-  if (interdit.includes(message.channel.id))
-    return message.channel.send(
-      `⚠️ - You're on the wrong channel, to do the commands go to <#663702472329658386>`
-    );
+  const args = message.content.slice(config.prefix.length).split(/ +/);
+  const commandName = args.shift().toLowerCase();
+  const user = message.mentions.users.first();
 
-  let messageArray = message.content.split(" ");
-  let command = messageArray[0];
-  let args = messageArray.slice(1);
-
-  let commandFile =
-    bot.commands.get(command.slice(config.prefix.length)) ||
+  const command =
+    bot.commands.get(commandName) ||
     bot.commands.find(
-      (cmd) =>
-        cmd.help.aliases &&
-        cmd.help.aliases.includes(command.slice(config.prefix.length))
+      (cmd) => cmd.help.aliases && cmd.help.aliases.includes(commandName)
     );
-  // console.log(bot.commands);
-  if (commandFile) commandFile.run(bot, message, args, config.prefix);
+  if (!command) return;
+
+  if (command.help.permissions && !message.member.hasPermission("BAN_MEMBERS"))
+    return message.reply(
+      "tu n'as pas les permissions pour taper cette commande."
+    );
+
+  if (command.help.args && !args.length) {
+    let noArgsReply = `Il nous faut des arguments pour cette commande, ${message.author}!`;
+
+    if (command.help.usage)
+      noArgsReply += `\nVoici comment utiliser la commande: \`${config.prefix}${command.help.name} ${command.help.usage}\``;
+
+    return message.channel.send(noArgsReply);
+  }
+
+  if (command.help.isUserAdmin && !user)
+    return message.reply("il faut mentionner un utilisateur.");
+
+  if (
+    command.help.isUserAdmin &&
+    message.guild.member(user).hasPermission("BAN_MEMBERS")
+  )
+    return message.reply(
+      "tu ne peux pas utiliser cette commande sur cet utilisateur."
+    );
+
+  if (!bot.cooldowns.has(command.help.name)) {
+    bot.cooldowns.set(command.help.name, new Collection());
+  }
+
+  const timeNow = Date.now();
+  const tStamps = bot.cooldowns.get(command.help.name);
+  const cdAmount = (command.help.cooldown || 5) * 1000;
+
+  if (tStamps.has(message.author.id)) {
+    const cdExpirationTime = tStamps.get(message.author.id) + cdAmount;
+
+    if (timeNow < cdExpirationTime) {
+      timeLeft = (cdExpirationTime - timeNow) / 1000;
+      return message.channel.send(
+        `Oh god! <@${
+          message.author.id
+        }>, just calm down and wait ${timeLeft.toFixed(
+          0
+        )} seconds before use \`${config.prefix}${
+          command.help.name
+        }\` again ! ${emotes.Retard}`
+      );
+    }
+  }
+
+  tStamps.set(message.author.id, timeNow);
+  setTimeout(() => tStamps.delete(message.author.id), cdAmount);
+
+  command.run(bot, message, args, config.prefix);
 });
 
 bot.on("message", function (message) {

@@ -139,8 +139,11 @@
   "piegeVolant": "Fly Trap",
   "friends": "Friends",
   "Howto": "How to add friends:",
-  "friendsDescription": "If you want random people to add you as a friend, go to <#700717164273074266> and type !profile <your username>.\nIf you want specific people to add you, just give them your galaxylifereborn.com/profile/<your username>. \n\n⚠️ - Please do not include the < >, and note that the website is case sensitive.",
+  "friendsDescription": "If you want random people to add you as a friend, go to <#700717164273074266> and type !profile <your username>.\nIf you want specific people to add you, just give them your [galaxylifereborn.com/profile/<your username>](https://galaxylifereborn.com/). \n\n⚠️ - Please do not include the < >, and note that the website is case sensitive.",
   "PA": "Pocket Adventures",
   "HowtoPA": "How to play Pocket Adventures:",
-  "PADesc": "The Pocket Edition is the mobile version of Galaxy Life Reborn, it can be installed thanks to the apk available on the [site](https://galaxylifereborn.com/home).\nTherefore it is only available on android at the moment."
+  "PADesc": "The Pocket Edition is the mobile version of Galaxy Life Reborn, it can be installed thanks to the apk available on the [site](https://galaxylifereborn.com/home).\nTherefore it is only available on android at the moment.",
+  "Issue": "Galaxy Life Issues",
+  "Howtobug": "How to report a issue:",
+  "Issue_desc": "Before reporting a bug you have to be sure that it is not in <#720292470235332629>, you have [visual bugs](https://discordapp.com/channels/638856299643273257/720292470235332629/720294344019673131) and [very known bugs](https://discordapp.com/channels/638856299643273257/720292470235332629/720294476870058035).\nAfter checking, look that it is not in <#693482226960171018>.\nYou can only report a bug if it's not in these two channels, if the bug gives an in-game advantage don't put it here!\nContact the staff via <@645261566563844136>.\n\nNo need to tell you not to use bugs."
 }

@@ -16,12 +16,12 @@ module.exports.run = (bot, message, args) => {
     `${chan.chat_nederlands}`,
     `${chan.chat_polski}`,
     `${chan.chat_portugês}`,
-    `${chan.donator_chat}`,
-    `${chan.galaxy_life_bases}`,
     `${chan.galaxy_life_chat}`,
+    `${chan.donator_chat}`,
+    `${chan.bots_and_spam}`,
+    `${chan.galaxy_life_bases}`,
     `${chan.galaxy_life_fanart}`,
     `${chan.galaxy_life_friends}`,
-    `${chan.galaxy_life_issues}`,
     `${chan.galaxy_life_memes}`,
     `${chan.the_meme_room}`,
     `${chan.vc_music}`,
@@ -29,32 +29,24 @@ module.exports.run = (bot, message, args) => {
 
   if (interdit.includes(message.channel.id))
     return message.channel.send(
-      `⚠️ - You're on the wrong channel, to do the commands go to <#663702472329658386>`
+      `⚠️ - You're on the wrong channel, to do this command go to <#${chan.galaxy_life_issues}>.`
     );
   const embed = new MessageEmbed()
     .setColor(colours.green_light)
     .setAuthor(bot.user.username, bot.user.avatarURL())
-    .setDescription(
-      `${emotes.Info} - ${lang.Infomation_DESCRIPTION} - ${emotes.portail}`
-    )
     .setThumbnail(bot.user.displayAvatarURL())
-    .setTitle(`${lang.Information} - ${lang.WarpGate}`)
-    .setURL(`${lang.WarpGate_link}`)
-    .attachFiles(["./assets/img/Buildings/warpgate.png"])
-    .setImage("attachment://warpgate.png")
-    .setFooter(
-      `${lang.Bot_name} | ${lang.Information}`,
-      bot.user.displayAvatarURL()
-    );
+    .addField(`${emotes.Info} - ${lang.Howtobug}`, `${lang.Issue_desc}`)
+    .setTitle(`${lang.Information} - ${lang.Issue} - ⚠️`)
+    .setFooter(`${lang.Bot_name} | ${lang.Issue}`, bot.user.displayAvatarURL());
 
   message.channel.send(embed);
 };
 
 module.exports.help = {
-  name: "warpgate",
-  aliases: ["wg", "gate", "portail", "portail de téléportation"],
-  category: "📡 - buildings",
-  description: `${lang.Information_desc}`,
-  cooldown: 0,
+  name: "issues",
+  aliases: ["bug", "issue", "bugs"],
+  category: "📌 - misc",
+  description: `how to report a issue`,
+  cooldown: 30,
   usage: "",
 };
