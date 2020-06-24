@@ -23,7 +23,7 @@ module.exports.help = {
   name: "friend",
   aliases: ["friends", "f", "ami", "amis"],
   category: "📌 - misc",
-  description: `how to invite some friends on GLR`,
+  description: `${lang.Friend_desc}`,
   cooldown: 30,
   usage: "",
 };

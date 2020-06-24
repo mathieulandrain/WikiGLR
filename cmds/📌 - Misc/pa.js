@@ -27,9 +27,7 @@ module.exports.run = (bot, message, args) => {
   ];
 
   if (interdit.includes(message.channel.id))
-    return message.channel.send(
-      `⚠️ - You're on the wrong channel, to do the commands go to <#663702472329658386> or <#${chan.galaxy_life_chat}> for this command.`
-    );
+    return message.channel.send(`⚠️ - ${lang.PA_Block}`);
   const embed = new MessageEmbed()
     .setColor(colours.green_light)
     .setAuthor(bot.user.username, bot.user.avatarURL())
@@ -45,7 +43,7 @@ module.exports.help = {
   name: "pa",
   aliases: ["pocketsadventure"],
   category: "📌 - misc",
-  description: `how to play pa`,
+  description: `${lang.PA_desc}`,
   cooldown: 30,
   usage: "",
 };

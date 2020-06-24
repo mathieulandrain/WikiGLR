@@ -28,9 +28,7 @@ module.exports.run = (client, message, args, tools) => {
   ];
 
   if (interdit.includes(message.channel.id))
-    return message.channel.send(
-      `⚠️ - You're on the wrong channel, to do the commands go to <#663702472329658386>`
-    );
+    return message.channel.send(`⚠️ - ${lang.Block} <#663702472329658386>`);
   let pages = [
     `${emotes.Info} - ${lang.Troopslvlunlock_DESCRIPTION} - ${emotes.labo}`,
     `${emotes.Info} - ${lang.Troopslvlunlock_DESCRIPTION} - ${emotes.labo}`,
@@ -62,7 +60,7 @@ module.exports.run = (client, message, args, tools) => {
     .setAuthor(client.user.username, client.user.avatarURL())
     .setThumbnail(client.user.displayAvatarURL())
     .setFooter(
-      `${lang.Bot_name} | Page ${page} of ${pages.length} | ${lang.Information}`
+      `${lang.Bot_name} | ${lang.Page} ${page} ${lang.Of} ${pages.length} | ${lang.Information}`
     )
     .setDescription(pages[page - 1])
     .setTitle(title[page - 1])
@@ -99,7 +97,7 @@ module.exports.run = (client, message, args, tools) => {
           embed.setAuthor(client.user.username, client.user.avatarURL());
           embed.setThumbnail(client.user.displayAvatarURL());
           embed.setFooter(
-            `${lang.Bot_name} | Page ${page} of ${pages.length} | ${lang.Information}`
+            `${lang.Bot_name} | ${lang.Page} ${page} ${lang.Of} ${pages.length} | ${lang.Information}`
           );
           await r.users.remove(user);
           msg.edit(embed);
@@ -120,7 +118,7 @@ module.exports.run = (client, message, args, tools) => {
           embed.setAuthor(client.user.username, client.user.avatarURL());
           embed.setThumbnail(client.user.displayAvatarURL());
           embed.setFooter(
-            `${lang.Bot_name} | Page ${page} of ${pages.length} | ${lang.Information}`
+            `${lang.Bot_name} | ${lang.Page} ${page} ${lang.Of} ${pages.length} | ${lang.Information}`
           );
           await r.users.remove(user);
           msg.edit(embed);

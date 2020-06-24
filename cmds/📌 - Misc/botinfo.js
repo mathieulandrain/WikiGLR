@@ -28,29 +28,27 @@ module.exports.run = (bot, message, args) => {
   ];
 
   if (interdit.includes(message.channel.id))
-    return message.channel.send(
-      `⚠️ - You're on the wrong channel, to do the commands go to <#663702472329658386>`
-    );
+    return message.channel.send(`⚠️ - ${lang.Block} <#663702472329658386>`);
   const embed = new MessageEmbed()
     .setColor(colours.green_light)
-    .setAuthor(`${bot.user.username} - Info`, bot.user.avatarURL())
+    .setAuthor(`${bot.user.username} - ${lang.Info}`, bot.user.avatarURL())
     .setThumbnail(bot.user.avatarURL())
     .addFields(
       {
-        name: "📀 - Memory:",
+        name: `📀 - ${lang.Memory}:`,
         value: `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(
           2
         )} MB`,
         inline: true,
       },
       {
-        name: "📡 - Uptime:",
+        name: `📡 - ${lang.Uptime}:`,
         value: `${Math.floor(bot.uptime / 1000 / 60).toString()} minutes`,
         inline: true,
       },
       { name: "\u200b", value: `\u200b`, inline: true },
       {
-        name: "🕹️ - Servers:",
+        name: `🕹️ - ${lang.Servers}:`,
         value: `${bot.guilds.cache.size.toString()}`,
         inline: true,
       },
@@ -66,10 +64,14 @@ module.exports.run = (bot, message, args) => {
           .reduce((a, b) => a + b)}`,
         inline: true,
       },
-      { name: "⚙️ - Version:", value: `${package.version}`, inline: true },
       {
-        name: "🆘 - Support:",
-        value: `[Server Invite](https://discord.gg/VTYaxAk)`,
+        name: `⚙️ - ${lang.Version}:`,
+        value: `${package.version}`,
+        inline: true,
+      },
+      {
+        name: `🆘 - ${lang.Support}:`,
+        value: `[${lang.Server_Invite}](https://discord.gg/VTYaxAk)`,
         inline: true,
       },
       {
@@ -88,7 +90,7 @@ module.exports.run = (bot, message, args) => {
         inline: true,
       }
     )
-    .setFooter(`${lang.Bot_name} | Botinfo`, bot.user.displayAvatarURL());
+    .setFooter(`${lang.Bot_name} | ${lang.Info}`, bot.user.displayAvatarURL());
 
   message.channel.send(embed);
 };

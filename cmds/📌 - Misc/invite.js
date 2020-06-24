@@ -28,20 +28,19 @@ module.exports.run = (bot, message, args) => {
   ];
 
   if (interdit.includes(message.channel.id))
-    return message.channel.send(
-      `⚠️ - You're on the wrong channel, to do the commands go to <#663702472329658386>`
-    );
+    return message.channel.send(`⚠️ - ${lang.Block} <#663702472329658386>`);
   const embed = new MessageEmbed()
     .setColor(colours.green_light)
-    .setAuthor(`${bot.user.username} - Invite`, bot.user.avatarURL())
-    .setDescription(
-      "You will find here the link to invite the bot on your server."
-    )
+    .setAuthor(`${bot.user.username} - ${lang.Invite}`, bot.user.avatarURL())
+    .setDescription(`${lang.Invite_desc}`)
     .addField(
       `${emotes.invite} - ${lang.Invite}:`,
       `[${lang.Invite_link}](https://discordapp.com/oauth2/authorize?client_id=723611271458586657&scope=bot&permissions=523328)`
     )
-    .setFooter(`${lang.Bot_name} | Invite`, bot.user.displayAvatarURL());
+    .setFooter(
+      `${lang.Bot_name} | ${lang.Invite}`,
+      bot.user.displayAvatarURL()
+    );
 
   message.channel.send(embed);
 };
@@ -50,7 +49,7 @@ module.exports.help = {
   name: "invite",
   aliases: ["invite"],
   category: "📌 - misc",
-  description: `Links to invite the bot on your server.`,
+  description: `${lang.Invite_DESC}`,
   cooldown: 0,
   usage: "",
 };

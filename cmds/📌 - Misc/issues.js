@@ -29,7 +29,7 @@ module.exports.run = (bot, message, args) => {
 
   if (interdit.includes(message.channel.id))
     return message.channel.send(
-      `⚠️ - You're on the wrong channel, to do this command go to <#${chan.galaxy_life_issues}>.`
+      `⚠️ - ${lang.Block} <#${chan.galaxy_life_issues}>.`
     );
   const embed = new MessageEmbed()
     .setColor(colours.green_light)
@@ -46,7 +46,7 @@ module.exports.help = {
   name: "issues",
   aliases: ["bug", "issue", "bugs"],
   category: "📌 - misc",
-  description: `how to report a issue`,
+  description: `${lang.Issue_DESC}`,
   cooldown: 30,
   usage: "",
 };

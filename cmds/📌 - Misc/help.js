@@ -28,16 +28,14 @@ module.exports.run = (bot, message, args) => {
   ];
 
   if (interdit.includes(message.channel.id))
-    return message.channel.send(
-      `⚠️ - You're on the wrong channel, to do the commands go to <#663702472329658386>`
-    );
+    return message.channel.send(`⚠️ - ${lang.Block} <#663702472329658386>`);
   if (!args.length) {
     const embed = new MessageEmbed()
-      .setAuthor(`${lang.Bot_name} | Help`, bot.user.displayAvatarURL())
+      .setAuthor(`${lang.Bot_name} | ${lang.Help}`, bot.user.displayAvatarURL())
       .setColor("#a1ee33")
       .addField(
         `${lang.ListeCommandes}`,
-        `${lang.Help_DESCRIPTION} **${prefix}help <command>**.`
+        `${lang.Help_DESCRIPTION} **${prefix}help <${lang.command}>**.`
       );
 
     for (const category of categoryList) {
@@ -54,7 +52,10 @@ module.exports.run = (bot, message, args) => {
             .map((cmd) => `\`\`${cmd.help.name}\`\``)
             .join(", ")}`
         )
-        .setFooter(`${lang.Bot_name} | Help `, bot.user.displayAvatarURL());
+        .setFooter(
+          `${lang.Bot_name} | ${lang.Help} `,
+          bot.user.displayAvatarURL()
+        );
     }
 
     return message.channel.send(embed);
@@ -68,11 +69,14 @@ module.exports.run = (bot, message, args) => {
     if (!command) return message.reply(`${lang.Commande_non_existante}`);
 
     const embed = new MessageEmbed()
-      .setAuthor(`${lang.Bot_name} - Command Help`, bot.user.displayAvatarURL())
+      .setAuthor(
+        `${lang.Bot_name} - ${lang.CommandHelp}`,
+        bot.user.displayAvatarURL()
+      )
       .setColor("#a1ee33")
       .setTitle(`${lang.Aide_sur_commande}: *${command.help.name}*`)
       .setThumbnail(message.guild.iconURL())
-      .addField("📄 - Description", `${command.help.description}`)
+      .addField(`📄 - ${lang.Description}`, `${command.help.description}`)
       .addField(
         `⚒️ - ${lang.Utilisation}`,
         command.help.usage
@@ -83,7 +87,7 @@ module.exports.run = (bot, message, args) => {
 
     if (command.help.aliases.length > 0)
       embed.addField(
-        "⛓️ - Alias",
+        `⛓️ - ${lang.Aliase}`,
         `\`\`${command.help.aliases.join(", ")}\`\``,
         true
       );
@@ -93,7 +97,7 @@ module.exports.run = (bot, message, args) => {
 
 module.exports.help = {
   name: "help",
-  aliases: ["help", "helpfr"],
+  aliases: ["help"],
   category: "📌 - misc",
   description: `${lang.Help_desc}`,
   usage: "",

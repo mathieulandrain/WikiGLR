@@ -28,9 +28,7 @@ module.exports.run = (bot, message, args) => {
   ];
 
   if (interdit.includes(message.channel.id))
-    return message.channel.send(
-      `⚠️ - You're on the wrong channel, to do the commands go to <#663702472329658386>`
-    );
+    return message.channel.send(`⚠️ - ${lang.Block} <#663702472329658386>`);
   const embed = new MessageEmbed()
     .setColor(colours.green_light)
     .setAuthor(bot.user.username, bot.user.avatarURL())
@@ -52,7 +50,7 @@ module.exports.run = (bot, message, args) => {
 
 module.exports.help = {
   name: "strike",
-  aliases: ["strikes", "moto", "S-trike"],
+  aliases: ["strikes", "moto", "Strike"],
   category: "📡 - troops",
   description: `${lang.Troops_desc}`,
   cooldown: 0,

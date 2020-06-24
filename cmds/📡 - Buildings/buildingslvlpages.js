@@ -28,9 +28,7 @@ module.exports.run = (client, message, args, tools) => {
   ];
 
   if (interdit.includes(message.channel.id))
-    return message.channel.send(
-      `⚠️ - You're on the wrong channel, to do the commands go to <#663702472329658386>`
-    );
+    return message.channel.send(`⚠️ - ${lang.Block} <#663702472329658386>`);
   let pages = [
     `${emotes.Info} - ${lang.Buildinglvlunlock_DESCRIPTION} - ${emotes.base}`,
     `${emotes.Info} - ${lang.Buildinglvlunlock_DESCRIPTION} - ${emotes.base}`,

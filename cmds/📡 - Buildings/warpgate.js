@@ -28,9 +28,7 @@ module.exports.run = (bot, message, args) => {
   ];
 
   if (interdit.includes(message.channel.id))
-    return message.channel.send(
-      `⚠️ - You're on the wrong channel, to do the commands go to <#663702472329658386>`
-    );
+    return message.channel.send(`⚠️ - ${lang.Block} <#663702472329658386>`);
   const embed = new MessageEmbed()
     .setColor(colours.green_light)
     .setAuthor(bot.user.username, bot.user.avatarURL())
@@ -52,7 +50,7 @@ module.exports.run = (bot, message, args) => {
 
 module.exports.help = {
   name: "warpgate",
-  aliases: ["wg", "gate", "portail", "portail de téléportation"],
+  aliases: ["wg", "gate", "portail", "portaildetéléportation"],
   category: "📡 - buildings",
   description: `${lang.Build_desc}`,
   cooldown: 0,

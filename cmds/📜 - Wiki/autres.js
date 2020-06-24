@@ -29,9 +29,7 @@ module.exports.run = (bot, message, args) => {
   ];
 
   if (interdit.includes(message.channel.id))
-    return message.channel.send(
-      `⚠️ - You're on the wrong channel, to do the commands go to <#663702472329658386>`
-    );
+    return message.channel.send(`⚠️ - ${lang.Block} <#663702472329658386>`);
   const embed = new MessageEmbed()
     .setColor(colours.green_light)
     .setTitle(`${emotes.glr} - ${lang.Autres}`)

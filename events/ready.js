@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const { Serveur_ID, prefix, memberCountChannelID } = require("../config.json");
+const { prefix } = require("../config.json");
 
 module.exports = async (bot) => {
   console.log(`(NoLimitv2): En ligne`);
