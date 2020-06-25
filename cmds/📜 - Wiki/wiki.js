@@ -1,11 +1,17 @@
 const { MessageEmbed } = require("discord.js");
 const colours = require("../../assets/json/colours.json");
 const emotes = require("../../assets/json/emotes.json");
-const { prefix } = require("../../config.json");
-const lang = require("../../assets/lang/english.json");
+const { default_prefix } = require("../../config.json");
+const english = require("../../assets/lang/english.json");
 const chan = require("../../assets/json/channels.json");
+const db = require("quick.db");
+const fs = require("fs");
 
-module.exports.run = (bot, message, args) => {
+module.exports.run = async (bot, message, args) => {
+  let default_lang = await db.get(message.guild.id);
+  let lang = await checklanguage(db, fs, default_lang.langue);
+  let prefix = db.get(`prefix_${message.guild.id}`);
+  if (prefix === null) prefix = default_prefix;
   var interdit = [
     `${chan.Test}`,
     `${chan.chat_deutsch}`,
@@ -45,13 +51,21 @@ module.exports.run = (bot, message, args) => {
     .setFooter(bot.user.username, bot.user.displayAvatarURL());
 
   message.channel.send(embed);
+  function checklanguage(db, fs, language) {
+    return new Promise(function (resolve, reject) {
+      fs.readFile(`./assets/lang/${language}.json`, async (err, data) => {
+        let l = JSON.parse(data);
+        resolve(l);
+      });
+    });
+  }
 };
 
 module.exports.help = {
   name: "wiki",
   aliases: ["wiki"],
   category: "📜 - wiki",
-  description: `${lang.WIKI_desc}`,
+  description: `${english.wiki_desc}`,
   cooldown: 0,
   usage: "",
 };

@@ -1,11 +1,15 @@
 const Discord = require("discord.js");
 const colours = require("../../assets/json/colours.json");
 const emotes = require("../../assets/json/emotes.json");
-const lang = require("../../assets/lang/english.json");
+const english = require("../../assets/lang/english.json");
 const files = require("../../assets/json/files.json");
 const chan = require("../../assets/json/channels.json");
+const db = require("quick.db");
+const fs = require("fs");
 
-module.exports.run = (client, message, args, tools) => {
+module.exports.run = async (client, message, args, tools) => {
+  let default_lang = await db.get(message.guild.id);
+  let lang = await checklanguage(db, fs, default_lang.langue);
   var interdit = [
     `${chan.Test}`,
     `${chan.chat_deutsch}`,
@@ -114,13 +118,21 @@ module.exports.run = (client, message, args, tools) => {
       });
     });
   });
+  function checklanguage(db, fs, language) {
+    return new Promise(function (resolve, reject) {
+      fs.readFile(`./assets/lang/${language}.json`, async (err, data) => {
+        let l = JSON.parse(data);
+        resolve(l);
+      });
+    });
+  }
 };
 // 724429073778081900 724429073765630154
 module.exports.help = {
   name: "buildunlock",
   aliases: ["buildinglevelunlock", "blu", "batiments", "debloquer batiments"],
   category: "📡 - buildings",
-  description: `${lang.Build_desc}`,
+  description: `${english.buildunlock_desc}`,
   cooldown: 0,
   usage: "",
 };

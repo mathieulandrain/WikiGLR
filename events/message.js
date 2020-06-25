@@ -1,7 +1,8 @@
 const { Collection } = require("discord.js");
-const config = require("../config.json");
+const { default_prefix } = require("../config.json");
 const emotes = require("../assets/json/emotes.json");
 const moment = require("moment");
+const db = require("quick.db");
 const lang = require("../assets/lang/english.json");
 moment.locale("fr");
 const cdseconds = 5;
@@ -9,9 +10,12 @@ const cdseconds = 5;
 module.exports = async (bot, message) => {
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;
-  if (!message.content.startsWith(config.prefix)) return;
+  let prefix = db.get(`prefix_${message.guild.id}`);
+  if (prefix === null) prefix = default_prefix;
 
-  const args = message.content.slice(config.prefix.length).split(/ +/);
+  if (!message.content.startsWith(prefix)) return;
+
+  const args = message.content.slice(prefix.length).split(/ +/);
   const commandName = args.shift().toLowerCase();
   const user = message.mentions.users.first();
 
@@ -38,9 +42,9 @@ module.exports = async (bot, message) => {
       return message.channel.send(
         `${lang.Ohgod} <@${message.author.id}>, ${lang.Calm} ${timeLeft.toFixed(
           0
-        )} ${lang.Before} \`${config.prefix}${command.help.name}\` ${
-          lang.Again
-        } ${emotes.Retard}`
+        )} ${lang.Before} \`${prefix}${command.help.name}\` ${lang.Again} ${
+          emotes.Retard
+        }`
       );
     }
   }
@@ -48,12 +52,12 @@ module.exports = async (bot, message) => {
   tStamps.set(message.author.id, timeNow);
   setTimeout(() => tStamps.delete(message.author.id), cdAmount);
 
-  command.run(bot, message, args, config.prefix);
+  command.run(bot, message, args, prefix);
 
   bot.on("message", function (message) {
     if (message.mentions.users.first() === bot.user) {
       return message.channel.send(
-        `${lang.Hello} <@${message.author.id}>, ${lang.Im} <@${bot.user.id}>, ${lang.myprefix} "\`\`${config.prefix}\`\`".\n${lang.needhelp} \`\`${config.prefix}help\`\` ${lang.or} \`\`${config.prefix}help <${lang.command}>\`\``
+        `${lang.Hello} <@${message.author.id}>, ${lang.Im} <@${bot.user.id}>, ${lang.myprefix} "\`\`${prefix}\`\`".\n${lang.needhelp} \`\`${prefix}help\`\` ${lang.or} \`\`${prefix}help <${lang.command}>\`\``
       );
     }
   });

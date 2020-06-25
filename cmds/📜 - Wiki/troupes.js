@@ -1,10 +1,14 @@
 const { MessageEmbed } = require("discord.js");
 const colours = require("../../assets/json/colours.json");
 const emotes = require("../../assets/json/emotes.json");
-const lang = require("../../assets/lang/english.json");
+const english = require("../../assets/lang/english.json");
 const chan = require("../../assets/json/channels.json");
+const db = require("quick.db");
+const fs = require("fs");
 
-module.exports.run = (bot, message, args) => {
+module.exports.run = async (bot, message, args) => {
+  let default_lang = await db.get(message.guild.id);
+  let lang = await checklanguage(db, fs, default_lang.langue);
   var interdit = [
     `${chan.Test}`,
     `${chan.chat_deutsch}`,
@@ -33,7 +37,7 @@ module.exports.run = (bot, message, args) => {
     .setColor(colours.green_light)
     .setTitle(`${emotes.colosse} - ${lang.Troops}`) // look ici ^^
     .setThumbnail(bot.user.avatarURL())
-    .setDescription(`${lang.IciVousAurezAccèsAuxPagesPourLesTroupes}.`)
+    .setDescription(`${lang.Troops}.`)
     .addField(
       `${emotes.starlin} - ${lang.Infanterie}:`,
       `${emotes.marine} - [${lang.Marine}](${lang.Marine_link})\n${emotes.pilleur} - [${lang.Pilleur}](${lang.Pilleur_link})\n${emotes.flamme} - [${lang.LanceFlamme}](${lang.LanceFlamme_link})\n${emotes.bazooka} - [${lang.Bazooka}](${lang.Bazooka_link})\n${emotes.kami} - [${lang.Kamikaze}](${lang.Kamikaze_link})\n${emotes.starlin} - [${lang.Starlinator}](${lang.Starlinator_link})\n${emotes.esquade} - [${lang.Esquade}](${lang.Esquade_link})\n${emotes.bérets} - [${lang.BéretVert}](${lang.BéretVert_link})`
@@ -49,13 +53,21 @@ module.exports.run = (bot, message, args) => {
     .setFooter(`No Limit | Wiki - ${lang.Troops}`, bot.user.displayAvatarURL());
 
   message.channel.send(embed);
+  function checklanguage(db, fs, language) {
+    return new Promise(function (resolve, reject) {
+      fs.readFile(`./assets/lang/${language}.json`, async (err, data) => {
+        let l = JSON.parse(data);
+        resolve(l);
+      });
+    });
+  }
 };
 
 module.exports.help = {
   name: "troops",
   aliases: ["troop"],
   category: "📜 - wiki",
-  description: `${lang.WIKI_desc}`,
+  description: `${english.troops_desc}`,
   cooldown: 0,
   usage: "",
 };

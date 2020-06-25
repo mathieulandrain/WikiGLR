@@ -1,11 +1,14 @@
 const { MessageEmbed } = require("discord.js");
-const package = require("../../package.json");
 const colours = require("../../assets/json/colours.json");
-const lang = require("../../assets/lang/english.json");
+const english = require("../../assets/lang/english.json");
 const emotes = require("../../assets/json/emotes.json");
 const chan = require("../../assets/json/channels.json");
+const db = require("quick.db");
+const fs = require("fs");
 
-module.exports.run = (bot, message, args) => {
+module.exports.run = async (bot, message, args) => {
+  let default_lang = await db.get(message.guild.id);
+  let lang = await checklanguage(db, fs, default_lang.langue);
   var interdit = [
     `${chan.Test}`,
     `${chan.chat_deutsch}`,
@@ -43,13 +46,21 @@ module.exports.run = (bot, message, args) => {
     );
 
   message.channel.send(embed);
+  function checklanguage(db, fs, language) {
+    return new Promise(function (resolve, reject) {
+      fs.readFile(`./assets/lang/${language}.json`, async (err, data) => {
+        let l = JSON.parse(data);
+        resolve(l);
+      });
+    });
+  }
 };
 
 module.exports.help = {
   name: "invite",
   aliases: ["invite"],
   category: "📌 - misc",
-  description: `${lang.Invite_DESC}`,
+  description: `${english.Invite_desc}`,
   cooldown: 0,
   usage: "",
 };

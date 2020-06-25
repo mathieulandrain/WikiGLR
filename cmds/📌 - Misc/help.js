@@ -1,11 +1,17 @@
 const { MessageEmbed } = require("discord.js");
-const { prefix } = require("../../config.json");
+const { default_prefix } = require("../../config.json");
 const { readdirSync } = require("fs");
 const categoryList = readdirSync("./cmds");
-const lang = require("../../assets/lang/english.json");
+const english = require("../../assets/lang/english.json");
 const chan = require("../../assets/json/channels.json");
+const db = require("quick.db");
+const fs = require("fs");
 
-module.exports.run = (bot, message, args) => {
+module.exports.run = async (bot, message, args) => {
+  let default_lang = await db.get(message.guild.id);
+  let lang = await checklanguage(db, fs, default_lang.langue);
+  let prefix = db.get(`prefix_${message.guild.id}`);
+  if (prefix === null) prefix = default_prefix;
   var interdit = [
     `${chan.Test}`,
     `${chan.chat_deutsch}`,
@@ -67,7 +73,7 @@ module.exports.run = (bot, message, args) => {
       );
     console.log(command);
     if (!command) return message.reply(`${lang.Commande_non_existante}`);
-
+    let description = eval(`lang.${command.help.name}_desc`);
     const embed = new MessageEmbed()
       .setAuthor(
         `${lang.Bot_name} - ${lang.CommandHelp}`,
@@ -76,7 +82,7 @@ module.exports.run = (bot, message, args) => {
       .setColor("#a1ee33")
       .setTitle(`${lang.Aide_sur_commande}: *${command.help.name}*`)
       .setThumbnail(message.guild.iconURL())
-      .addField(`📄 - ${lang.Description}`, `${command.help.description}`)
+      .addField(`📄 - ${lang.Description}`, description)
       .addField(
         `⚒️ - ${lang.Utilisation}`,
         command.help.usage
@@ -93,12 +99,20 @@ module.exports.run = (bot, message, args) => {
       );
     return message.channel.send(embed);
   }
+  function checklanguage(db, fs, language) {
+    return new Promise(function (resolve, reject) {
+      fs.readFile(`./assets/lang/${language}.json`, async (err, data) => {
+        let l = JSON.parse(data);
+        resolve(l);
+      });
+    });
+  }
 };
 
 module.exports.help = {
   name: "help",
   aliases: ["help"],
   category: "📌 - misc",
-  description: `${lang.Help_desc}`,
+  description: `${english.Help_desc}`,
   usage: "",
 };
