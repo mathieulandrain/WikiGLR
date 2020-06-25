@@ -41,8 +41,8 @@ module.exports.run = async (bot, message, args) => {
     .setThumbnail(bot.user.displayAvatarURL())
     .setTitle(`${lang.Information} - ${lang.BunkerCop}`)
     .setURL(`${lang.BunkerCop_link}`)
-    .attachFiles(["./assets/img/Buildings/bunker.png"])
-    .setImage("attachment://bunker.png")
+    .attachFiles(["./assets/img/Buildings/bunkerco.png"])
+    .setImage("attachment://bunkerco.png")
     .setFooter(
       `${lang.Bot_name} | ${lang.Information}`,
       bot.user.displayAvatarURL()
