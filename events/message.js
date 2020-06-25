@@ -9,14 +9,17 @@ const cdseconds = 5;
 const fs = require("fs");
 
 module.exports = async (bot, message) => {
-  let default_lang = await db.get(message.guild.id);
-  let lang = await checklanguage(db, fs, default_lang.langue);
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;
-
+  let default_lang = await db.get(message.guild.id);
+  let lang = await checklanguage(db, fs, default_lang.langue);
   let prefix = db.get(`prefix_${message.guild.id}`);
   if (prefix === null) prefix = default_prefix;
-
+  if (message.mentions.users.first() === bot.user) {
+    return message.channel.send(
+      `${lang.Hello} <@${message.author.id}>, ${lang.Im} <@${bot.user.id}>, ${lang.myprefix} "\`\`${prefix}\`\`".\n${lang.needhelp} \`\`${prefix}help\`\` ${lang.or} \`\`${prefix}help <${lang.command}>\`\``
+    );
+  }
   if (!message.content.startsWith(prefix)) return;
 
   const args = message.content.slice(prefix.length).split(/ +/);
@@ -57,14 +60,6 @@ module.exports = async (bot, message) => {
   setTimeout(() => tStamps.delete(message.author.id), cdAmount);
 
   command.run(bot, message, args, prefix);
-
-  bot.on("message", function (message) {
-    if (message.mentions.users.first() === bot.user) {
-      return message.channel.send(
-        `${lang.Hello} <@${message.author.id}>, ${lang.Im} <@${bot.user.id}>, ${lang.myprefix} "\`\`${prefix}\`\`".\n${lang.needhelp} \`\`${prefix}help\`\` ${lang.or} \`\`${prefix}help <${lang.command}>\`\``
-      );
-    }
-  });
   function checklanguage(db, fs, language) {
     return new Promise(function (resolve, reject) {
       fs.readFile(`./assets/lang/${language}.json`, async (err, data) => {
