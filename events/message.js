@@ -3,13 +3,17 @@ const { default_prefix } = require("../config.json");
 const emotes = require("../assets/json/emotes.json");
 const moment = require("moment");
 const db = require("quick.db");
-const lang = require("../assets/lang/english.json");
+const english = require("../assets/lang/english.json");
 moment.locale("fr");
 const cdseconds = 5;
+const fs = require("fs");
 
 module.exports = async (bot, message) => {
+  let default_lang = await db.get(message.guild.id);
+  let lang = await checklanguage(db, fs, default_lang.langue);
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;
+
   let prefix = db.get(`prefix_${message.guild.id}`);
   if (prefix === null) prefix = default_prefix;
 
@@ -61,4 +65,12 @@ module.exports = async (bot, message) => {
       );
     }
   });
+  function checklanguage(db, fs, language) {
+    return new Promise(function (resolve, reject) {
+      fs.readFile(`./assets/lang/${language}.json`, async (err, data) => {
+        let l = JSON.parse(data);
+        resolve(l);
+      });
+    });
+  }
 };

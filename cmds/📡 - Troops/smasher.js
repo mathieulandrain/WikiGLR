@@ -3,6 +3,8 @@ const colours = require("../../assets/json/colours.json");
 const emotes = require("../../assets/json/emotes.json");
 const english = require("../../assets/lang/english.json");
 const chan = require("../../assets/json/channels.json");
+const db = require("quick.db");
+const fs = require("fs");
 
 module.exports.run = async (bot, message, args) => {
   let default_lang = await db.get(message.guild.id);

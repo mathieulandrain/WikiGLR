@@ -201,6 +201,7 @@
   "friend_desc": "How to invite some friends on GLR",
   "command": "command",
   "help": "Help",
+  "Help": "Help",
   "CommandHelp": "Command Help",
   "Description": "Description",
   "Aliase": "Aliase(s)",

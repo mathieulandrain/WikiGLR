@@ -22,8 +22,8 @@ module.exports.run = async (client, message, args) => {
 
   if (!files.includes(`${args[0].toLowerCase()}.json`)) {
     return message.channel.send(
-      `${lang.notrad} \`\`french\`\`, \`\`english\`\`, \`\`polski\`\`, \`\`turkish\`\`, \`\`nederlands\`\`, \`\`italiano\`\`, \`\`espagñol\`\`, \`\`português\`\`.`
-    );
+      `${lang.notrad} \`\`french\`\`, \`\`english\`\`, \`\`polski\`\`, \`\`turkish\`\`, \`\`nederlands\`\`, \`\`español\`\`.`
+    ); // //\`\`italiano\`\`, \`\`português\`\`.
   }
 
   if (args.join("") === default_lang) {
