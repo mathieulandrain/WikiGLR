@@ -1,11 +1,11 @@
-const db = require("quick.db");
+const model1 = require("../../dbFile.js");
 const { default_prefix } = require("../../config.json");
 const english = require("../../assets/lang/english.json");
 const fs = require("fs");
 
 module.exports.run = async (client, message, args) => {
-  let default_lang = await db.get(message.guild.id);
-  let lang = await checklanguage(db, fs, default_lang.langue);
+  let default_lang = await model1.findOne({ ID: `${message.guild.id}` });
+  let lang = await checklanguage(model1, fs, default_lang.langue);
   if (!message.member.hasPermission("ADMINISTRATOR")) {
     return message.channel.send(`${lang.Noperm}`);
   }
@@ -23,13 +23,19 @@ module.exports.run = async (client, message, args) => {
   }
 
   if (args.join("") === default_prefix) {
-    db.delete(`prefix_${message.guild.id}`);
+    await model1.updateOne(
+      { ID: `${message.guild.id}` },
+      { $set: { prefix: args[0] } }
+    );
     return await message.channel.send(`${lang.prefixreset}`);
   }
 
-  db.set(`prefix_${message.guild.id}`, args[0]);
+  await model1.updateOne(
+    { ID: `${message.guild.id}` },
+    { $set: { prefix: args[0] } }
+  );
   await message.channel.send(`${lang.setto} **\`\`${args[0]}\`\`**`);
-  function checklanguage(db, fs, language) {
+  function checklanguage(model1, fs, language) {
     return new Promise(function (resolve, reject) {
       fs.readFile(`./assets/lang/${language}.json`, async (err, data) => {
         let l = JSON.parse(data);

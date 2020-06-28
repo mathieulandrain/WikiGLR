@@ -3,12 +3,12 @@ const colours = require("../../assets/json/colours.json");
 const emotes = require("../../assets/json/emotes.json");
 const english = require("../../assets/lang/english.json");
 const chan = require("../../assets/json/channels.json");
-const db = require("quick.db");
+const model1 = require("../../dbFile.js");
 const fs = require("fs");
 
 module.exports.run = async (bot, message, args) => {
-  let default_lang = await db.get(message.guild.id);
-  let lang = await checklanguage(db, fs, default_lang.langue);
+  let infoServ = await model1.findOne({ ID: `${message.guild.id}` });
+  let lang = await checklanguage(model1, fs, infoServ.langue);
   var interdit = [
     `${chan.Test}`,
     `${chan.chat_deutsch}`,
@@ -32,12 +32,12 @@ module.exports.run = async (bot, message, args) => {
 
   if (interdit.includes(message.channel.id))
     return message.channel.send(`⚠️ - ${lang.Block} <#663702472329658386>`);
-  // pk look ici ???
+
   const embed = new MessageEmbed()
     .setColor(colours.green_light)
-    .setTitle(`${emotes.colosse} - ${lang.Troops}`) // look ici ^^
+    .setTitle(`${emotes.colosse} - ${lang.Troops}`)
     .setThumbnail(bot.user.avatarURL())
-    .setDescription(`${lang.Troops}.`)
+    .setDescription(`${lang.troopslvlunlock_desc}`)
     .addField(
       `${emotes.starlin} - ${lang.Infanterie}:`,
       `${emotes.marine} - [${lang.Marine}](${lang.Marine_link})\n${emotes.pilleur} - [${lang.Pilleur}](${lang.Pilleur_link})\n${emotes.flamme} - [${lang.LanceFlamme}](${lang.LanceFlamme_link})\n${emotes.bazooka} - [${lang.Bazooka}](${lang.Bazooka_link})\n${emotes.kami} - [${lang.Kamikaze}](${lang.Kamikaze_link})\n${emotes.starlin} - [${lang.Starlinator}](${lang.Starlinator_link})\n${emotes.esquade} - [${lang.Esquade}](${lang.Esquade_link})\n${emotes.bérets} - [${lang.BéretVert}](${lang.BéretVert_link})`
@@ -53,7 +53,7 @@ module.exports.run = async (bot, message, args) => {
     .setFooter(`No Limit | Wiki - ${lang.Troops}`, bot.user.displayAvatarURL());
 
   message.channel.send(embed);
-  function checklanguage(db, fs, language) {
+  function checklanguage(model1, fs, language) {
     return new Promise(function (resolve, reject) {
       fs.readFile(`./assets/lang/${language}.json`, async (err, data) => {
         let l = JSON.parse(data);
@@ -65,7 +65,17 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.help = {
   name: "troops",
-  aliases: ["troop"],
+  aliases: [
+    "troop",
+    "Truppen",
+    "Edificios",
+    "Troupes",
+    "Truppe",
+    "Troepen",
+    "Jednostki",
+    "Tropas",
+    "Birlikler",
+  ],
   category: "📜 - wiki",
   description: `${english.troops_desc}`,
   cooldown: 0,

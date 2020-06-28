@@ -2,10 +2,10 @@ const Discord = require("discord.js");
 const colours = require("../../assets/json/colours.json");
 const emotes = require("../../assets/json/emotes.json");
 const english = require("../../assets/lang/english.json");
-const files = require("../../assets/json/files.json");
 const chan = require("../../assets/json/channels.json");
 const model1 = require("../../dbFile.js");
 const fs = require("fs");
+const files = require("../../assets/json/files.json");
 
 module.exports.run = async (client, message, args, tools) => {
   let infoServ = await model1.findOne({ ID: `${message.guild.id}` });
@@ -34,28 +34,36 @@ module.exports.run = async (client, message, args, tools) => {
   if (interdit.includes(message.channel.id))
     return message.channel.send(`⚠️ - ${lang.Block} <#663702472329658386>`);
   let pages = [
-    `${emotes.Info} - ${lang.Troopslvlunlock_DESCRIPTION} - ${emotes.labo}`,
-    `${emotes.Info} - ${lang.Troopslvlunlock_DESCRIPTION} - ${emotes.labo}`,
-    `${emotes.Info} - ${lang.Troopslvlunlock_DESCRIPTION} - ${emotes.labo}`,
-    `${emotes.Info} - ${lang.Troopslvlunlock_DESCRIPTION} - ${emotes.labo}`,
+    `${emotes.Info} - ${lang.Infomation_DESCRIPTION} - ${emotes.batterie}`,
+    `${emotes.Info} - ${lang.Infomation_DESCRIPTION} - ${emotes.mana}`,
+    `${emotes.Info} - ${lang.Infomation_DESCRIPTION} - ${emotes.friendship}`,
+    `${emotes.Info} - ${lang.Infomation_DESCRIPTION} - ${emotes.sphere}`,
+    `${emotes.Info} - ${lang.Infomation_DESCRIPTION} - ${emotes.Bleutrap}`,
+    `${emotes.Info} - ${lang.Infomation_DESCRIPTION} - ${emotes.Flytrap}`,
   ];
   let title = [
-    `${lang.Information} - ${lang.Troopslvlunlock}`,
-    `${lang.Information} - ${lang.Troopslvlunlock}`,
-    `${lang.Information} - ${lang.Troopslvlunlock}`,
-    `${lang.Information} - ${lang.Troopslvlunlock}`,
+    `${lang.Information} - ${lang.batterie_title}`,
+    `${lang.Information} - ${lang.mana_title}`,
+    `${lang.Information} - ${lang.apprentice_title}`,
+    `${lang.Information} - ${lang.sphere_title}`,
+    `${lang.Information} - ${lang.bluetrap_title}`,
+    `${lang.Information} - ${lang.flytrap_title}`,
   ];
   let url = [
-    `${lang.Troopslvlunlock_link}`,
-    `${lang.Troopslvlunlock_link}`,
-    `${lang.Troopslvlunlock_link}`,
-    `${lang.Troopslvlunlock_link}`,
+    `${lang.stuff_link}`,
+    `${lang.stuff_link}`,
+    `${lang.stuff_link}`,
+    `${lang.stuff_link}`,
+    `${lang.stuff_link}`,
+    `${lang.stuff_link}`,
   ];
   let image = [
-    `${files.lvlTroupes}`,
-    `${files.infanterie}`,
-    `${files.vehicule}`,
-    `${files.aerien}`,
+    `${files.batterie}`,
+    `${files.mana}`,
+    `${files.friendship}`,
+    `${files.sphere}`,
+    `${files.bluetrap}`,
+    `${files.flytrap}`,
   ];
   let page = 1;
 
@@ -64,7 +72,7 @@ module.exports.run = async (client, message, args, tools) => {
     .setAuthor(client.user.username, client.user.avatarURL())
     .setThumbnail(client.user.displayAvatarURL())
     .setFooter(
-      `${lang.Bot_name} | ${lang.Page} ${page} ${lang.Of} ${pages.length} | ${lang.Information}`
+      `${lang.Bot_name} | Page ${page} of ${pages.length} | ${lang.Information}`
     )
     .setDescription(pages[page - 1])
     .setTitle(title[page - 1])
@@ -86,7 +94,6 @@ module.exports.run = async (client, message, args, tools) => {
       const forwards = msg.createReactionCollector(forwardsFilter, {
         time: 600000,
       });
-
       backawards.on("collect", async (r, user) => {
         if (user.id !== message.author.id) {
           await r.users.remove(user);
@@ -101,7 +108,7 @@ module.exports.run = async (client, message, args, tools) => {
           embed.setAuthor(client.user.username, client.user.avatarURL());
           embed.setThumbnail(client.user.displayAvatarURL());
           embed.setFooter(
-            `${lang.Bot_name} | ${lang.Page} ${page} ${lang.Of} ${pages.length} | ${lang.Information}`
+            `${lang.Bot_name} | Page ${page} of ${pages.length} | ${lang.Information}`
           );
           await r.users.remove(user);
           msg.edit(embed);
@@ -122,7 +129,7 @@ module.exports.run = async (client, message, args, tools) => {
           embed.setAuthor(client.user.username, client.user.avatarURL());
           embed.setThumbnail(client.user.displayAvatarURL());
           embed.setFooter(
-            `${lang.Bot_name} | ${lang.Page} ${page} ${lang.Of} ${pages.length} | ${lang.Information}`
+            `${lang.Bot_name} | Page ${page} of ${pages.length} | ${lang.Information}`
           );
           await r.users.remove(user);
           msg.edit(embed);
@@ -139,12 +146,12 @@ module.exports.run = async (client, message, args, tools) => {
     });
   }
 };
-// 724429073778081900 724429073765630154
+
 module.exports.help = {
-  name: "troopslvlunlock",
-  aliases: ["tlu", "debloquer troupes", "niveau troupes", "lvl troupes"],
-  category: "📡 - troops",
-  description: `${english.Troops_desc}`,
+  name: "othersitems",
+  aliases: [],
+  category: "🧰 - items",
+  description: `${english.wiki_desc}`,
   cooldown: 0,
   usage: "",
 };

@@ -74,5 +74,15 @@
   "Bleutrap": "<:bleutrap:723893183897141342>",
   "Friend": "<:friend:724681765221957662>",
   "Retard": "<:you_are_a_retarded:724817377887518780>",
-  "Mender": "<:mender:724971969174437958>"
+  "Mender": "<:mender:724971969174437958>",
+  "worker": "<:Worker:726175600133537874>",
+  "missile": "<:The_Missile_Rain:726213681540759662>",
+  "roche": "<:The_Boulder_Strike:726213681469456445>",
+  "nuke": "<:Nuke:726213681905401888>",
+  "fuel": "<:Gift_nuke_fuel:726213681519525948>",
+  "device": "<:Gift_nuke_fission_device:726213681351884802>",
+  "batterie": "<:The_Star_Battery:726237623500406866>",
+  "mana": "<:The_Mana_Light:726237213561454722>",
+  "friendship": "<:Gift_friendship_stone:726237212957474836>",
+  "sphere": "<:Gift_Sphere:726237213649534986>"
 }

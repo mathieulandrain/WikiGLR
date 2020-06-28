@@ -4,13 +4,13 @@ const emotes = require("../../assets/json/emotes.json");
 const { default_prefix } = require("../../config.json");
 const english = require("../../assets/lang/english.json");
 const chan = require("../../assets/json/channels.json");
-const db = require("quick.db");
+const model1 = require("../../dbFile.js");
 const fs = require("fs");
 
 module.exports.run = async (bot, message, args) => {
-  let default_lang = await db.get(message.guild.id);
-  let lang = await checklanguage(db, fs, default_lang.langue);
-  let prefix = db.get(`prefix_${message.guild.id}`);
+  let infoServ = await model1.findOne({ ID: `${message.guild.id}` });
+  let lang = await checklanguage(model1, fs, infoServ.langue);
+  let prefix = infoServ.prefix;
   if (prefix === null) prefix = default_prefix;
   var interdit = [
     `${chan.Test}`,
@@ -51,7 +51,7 @@ module.exports.run = async (bot, message, args) => {
     .setFooter(bot.user.username, bot.user.displayAvatarURL());
 
   message.channel.send(embed);
-  function checklanguage(db, fs, language) {
+  function checklanguage(model1, fs, language) {
     return new Promise(function (resolve, reject) {
       fs.readFile(`./assets/lang/${language}.json`, async (err, data) => {
         let l = JSON.parse(data);

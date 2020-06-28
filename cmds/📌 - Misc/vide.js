@@ -4,13 +4,14 @@ const colours = require("../../assets/json/colours.json");
 const english = require("../../assets/lang/english.json");
 const emotes = require("../../assets/json/emotes.json");
 const chan = require("../../assets/json/channels.json");
-const db = require("quick.db");
+const model1 = require("../../dbFile.js");
 const fs = require("fs");
 
 module.exports.run = async (bot, message, args) => {
   if (message.author.id !== "257173141489582085") return;
+  if (await model1.findOne({ ID: `${message.guild.id}` })) return;
   bot.guilds.cache.forEach((guild) => {
-    db.set(guild.id, { langue: "english" });
+    model1.create({ ID: `${guild.id}`, langue: "english" });
   });
 };
 

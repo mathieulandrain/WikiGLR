@@ -3,3 +3,4 @@ package-lock.json
 config.json
 configdev.json
 configserv.json
+dbFile.js 

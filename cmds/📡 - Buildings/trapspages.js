@@ -4,12 +4,12 @@ const emotes = require("../../assets/json/emotes.json");
 const english = require("../../assets/lang/english.json");
 const files = require("../../assets/json/files.json");
 const chan = require("../../assets/json/channels.json");
-const db = require("quick.db");
+const model1 = require("../../dbFile.js");
 const fs = require("fs");
 
 module.exports.run = async (client, message, args, tools) => {
-  let default_lang = await db.get(message.guild.id);
-  let lang = await checklanguage(db, fs, default_lang.langue);
+  let infoServ = await model1.findOne({ ID: `${message.guild.id}` });
+  let lang = await checklanguage(model1, fs, infoServ.langue);
   var interdit = [
     `${chan.Test}`,
     `${chan.chat_deutsch}`,
@@ -118,7 +118,7 @@ module.exports.run = async (client, message, args, tools) => {
       });
     });
   });
-  function checklanguage(db, fs, language) {
+  function checklanguage(model1, fs, language) {
     return new Promise(function (resolve, reject) {
       fs.readFile(`./assets/lang/${language}.json`, async (err, data) => {
         let l = JSON.parse(data);
@@ -130,7 +130,19 @@ module.exports.run = async (client, message, args, tools) => {
 // 724429073778081900 724429073765630154
 module.exports.help = {
   name: "traps",
-  aliases: ["trap", "piège", "pièges", "piege"],
+  aliases: [
+    "trap",
+    "piège",
+    "pièges",
+    "piege",
+    "fallen",
+    "trampa",
+    "trappole",
+    "vallen",
+    "pułapki",
+    "armadilhas",
+    "tuzaklar",
+  ],
   category: "📡 - buildings",
   description: `${english.Build_desc}`,
   cooldown: 0,

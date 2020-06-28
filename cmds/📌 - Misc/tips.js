@@ -1,6 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 const colours = require("../../assets/json/colours.json");
 const emotes = require("../../assets/json/emotes.json");
+const { prefix } = require("../../config.json");
 const english = require("../../assets/lang/english.json");
 const chan = require("../../assets/json/channels.json");
 const model1 = require("../../dbFile.js");
@@ -32,21 +33,38 @@ module.exports.run = async (bot, message, args) => {
 
   if (interdit.includes(message.channel.id))
     return message.channel.send(`⚠️ - ${lang.Block} <#663702472329658386>`);
+  var TipsList = [
+    `${lang.tips1}`,
+    `${lang.tips2}`,
+    `${lang.tips3}`,
+    `${lang.tips4}`,
+    `${lang.tips5}`,
+    `${lang.tips6}`,
+    `${lang.tips7}`,
+    `${lang.tips8}`,
+    `${lang.tips9}`,
+    `${lang.tips10}`,
+    `${lang.tips11}`,
+    `${lang.tips12}`,
+    `${lang.tips13}`,
+    `${lang.tips14}`,
+    `${lang.tips15}`,
+    `${lang.tips16}`,
+    `${lang.tips17}`,
+    `${lang.tips18}`,
+    `${lang.tips19}`,
+    `${lang.tips20}`,
+  ];
+
+  let result = Math.floor(Math.random() * TipsList.length);
+  let reponse = TipsList[result];
   const embed = new MessageEmbed()
     .setColor(colours.green_light)
     .setAuthor(bot.user.username, bot.user.avatarURL())
-    .setDescription(
-      `${emotes.Info} - ${lang.Infomation_DESCRIPTION} - ${emotes.ovni}`
-    )
     .setThumbnail(bot.user.displayAvatarURL())
-    .setTitle(`${lang.Information} - ${lang.OvniAspirateur}`)
-    .setURL(`${lang.OvniAspirateur_link}`)
-    .attachFiles(["./assets/img/Troops/ovni.png"])
-    .setImage("attachment://ovni.png")
-    .setFooter(
-      `${lang.Bot_name} | ${lang.Information}`,
-      bot.user.displayAvatarURL()
-    );
+    .addField(`${emotes.Info} - ${lang.tips_DESC}`, `${reponse}`)
+    .setTitle(`${lang.Information} - ${lang.tips} - ${emotes.Friend}`)
+    .setFooter(`${lang.Bot_name} | ${lang.tips}`, bot.user.displayAvatarURL());
 
   message.channel.send(embed);
   function checklanguage(model1, fs, language) {
@@ -60,10 +78,10 @@ module.exports.run = async (bot, message, args) => {
 };
 
 module.exports.help = {
-  name: "hoover",
-  aliases: ["hooverufo", "ovni", "OVNI"],
-  category: "📡 - troops",
-  description: `${english.Troops_desc}`,
+  name: "tips",
+  aliases: ["tip"],
+  category: "📌 - misc",
+  description: `${english.PA_desc}`,
   cooldown: 0,
   usage: "",
 };
