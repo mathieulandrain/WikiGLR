@@ -53,7 +53,7 @@ module.exports.run = async (client, message, args) => {
 module.exports.help = {
   name: "setlang",
   aliases: ["setlang"],
-  category: "administration",
+  category: "⚒️ - administration",
   description: `${english.Botinfo_desc}`,
   cooldown: 0,
   usage: "",

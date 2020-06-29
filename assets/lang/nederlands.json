@@ -282,8 +282,17 @@
   "sphere_title": "Bol",
   "bluetrap_title": "Blauwe Val",
   "flytrap_title": "Vliegenvanger",
-  "hallo_title": "Halloween Event",
+  "hallo_title": "Halloween-evenement",
   "hallo_link": "https://galaxylife.fandom.com/wiki/Halloween_Event",
-  "dooms_title": "Doomsday Event",
-  "dooms_link": "https://galaxylife.fandom.com/wiki/Doomsday_Event"
+  "dooms_title": "Doomsday-evenement",
+  "dooms_link": "https://galaxylife.fandom.com/wiki/Doomsday_Event",
+  "Misc": "Diversen",
+  "Wiki": "Wiki",
+  "Buildings": "Gebouwen",
+  "Events": "Evenement",
+  "Items": "Onderwerp",
+  "Administration": "Administratie",
+  "rivalbattles_desc": "Rivaliserende Strijd",
+  "rivalbattles_link": "https://galaxylife.fandom.com/wiki/Rival_Battles",
+  "rivalbattles_title": "Rivaliserende Strijd"
 }

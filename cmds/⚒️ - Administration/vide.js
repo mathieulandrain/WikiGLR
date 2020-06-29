@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
 module.exports.help = {
   name: "*",
   aliases: [],
-  category: "administration",
+  category: "⚒️ - administration",
   description: `${english.Botinfo_desc}`,
   cooldown: 0,
   usage: "",

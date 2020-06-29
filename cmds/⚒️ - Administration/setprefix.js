@@ -48,7 +48,7 @@ module.exports.run = async (client, message, args) => {
 module.exports.help = {
   name: "setprefix",
   aliases: ["prefix"],
-  category: "administration",
+  category: "⚒️ - administration",
   description: `${english.Botinfo_desc}`,
   cooldown: 0,
   usage: "",

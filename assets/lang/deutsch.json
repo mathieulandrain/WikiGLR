@@ -282,8 +282,17 @@
   "sphere_title": "Bereich",
   "bluetrap_title": "Blaue Falle",
   "flytrap_title": "Fliegenfalle",
-  "hallo_title": "Halloween Event",
+  "hallo_title": "Halloween-Veranstaltung ",
   "hallo_link": "https://galaxylife.fandom.com/wiki/Halloween_Event",
-  "dooms_title": "Doomsday Event",
-  "dooms_link": "https://galaxylife.fandom.com/wiki/Doomsday_Event"
+  "dooms_title": "Doomsday-Veranstaltung",
+  "dooms_link": "https://galaxylife.fandom.com/wiki/Doomsday_Event",
+  "Misc": "Verschiedenes",
+  "Wiki": "Wiki",
+  "Buildings": "Gebäude",
+  "Events": "Veranstaltung",
+  "Items": "Thema",
+  "Administration": "Verwaltung",
+  "rivalbattles_desc": "Rivale Schlacht",
+  "rivalbattles_link": "https://galaxylife.fandom.com/wiki/Rival_Battles",
+  "rivalbattles_title": "Rivale Schlacht"
 }

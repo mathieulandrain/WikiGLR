@@ -27,6 +27,7 @@ module.exports = async (bot, message) => {
       `${lang.Hello} <@${message.author.id}>, ${lang.Im} <@${bot.user.id}>, ${lang.myprefix} "\`\`${prefix}\`\`".\n${lang.needhelp} \`\`${prefix}help\`\` ${lang.or} \`\`${prefix}help <${lang.command}>\`\``
     );
   }
+
   if (!message.content.startsWith(prefix) || message.content.length === 1)
     return;
 

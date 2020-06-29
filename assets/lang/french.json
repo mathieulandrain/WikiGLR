@@ -282,8 +282,17 @@
   "sphere_title": "Sphere",
   "bluetrap_title": "Blue Trap",
   "flytrap_title": "Fly Trap",
-  "hallo_title": "Halloween Event",
+  "hallo_title": "Evénement Halloween",
   "hallo_link": "https://galaxylife.fandom.com/wiki/Halloween_Event",
-  "dooms_title": "Doomsday Event",
-  "dooms_link": "https://galaxylife.fandom.com/wiki/Doomsday_Event"
+  "dooms_title": "Evénement  Doomsday",
+  "dooms_link": "https://galaxylife.fandom.com/wiki/Doomsday_Event",
+  "Misc": "Divers",
+  "Wiki": "Wiki",
+  "Buildings": "Batiments",
+  "Events": "Evenement",
+  "Items": "Objet",
+  "Administration": "Administration",
+  "rivalbattles_desc": "Combat des chefs",
+  "rivalbattles_link": "https://galaxylife.fandom.com/wiki/Rival_Battles",
+  "rivalbattles_title": "Combat des chefs"
 }

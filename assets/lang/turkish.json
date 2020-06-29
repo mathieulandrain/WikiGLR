@@ -282,8 +282,17 @@
   "sphere_title": "Küre",
   "bluetrap_title": "Mavi Tuzak",
   "flytrap_title": "Uçan Tuzak",
-  "hallo_title": "Halloween Event",
+  "hallo_title": "Halloween olayları ",
   "hallo_link": "https://galaxylife.fandom.com/wiki/Halloween_Event",
-  "dooms_title": "Doomsday Event",
-  "dooms_link": "https://galaxylife.fandom.com/wiki/Doomsday_Event"
+  "dooms_title": "Doomsday olayları ",
+  "dooms_link": "https://galaxylife.fandom.com/wiki/Doomsday_Event",
+  "Misc": "Çeşitli",
+  "Wiki": "Wiki",
+  "Buildings": "Binalar",
+  "Events": "Olaylar",
+  "Items": "Eşya",
+  "Administration": "Yönetim",
+  "rivalbattles_desc": "Rakip Savaşı",
+  "rivalbattles_link": "https://galaxylife.fandom.com/wiki/Rival_Battles",
+  "rivalbattles_title": "Rakip Savaşı"
 }

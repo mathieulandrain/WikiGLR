@@ -286,5 +286,14 @@
   "hallo_title": "Halloween Event",
   "hallo_link": "https://galaxylife.fandom.com/wiki/Halloween_Event",
   "dooms_title": "Doomsday Event",
-  "dooms_link": "https://galaxylife.fandom.com/wiki/Doomsday_Event"
+  "dooms_link": "https://galaxylife.fandom.com/wiki/Doomsday_Event",
+  "Misc": "Misc",
+  "Wiki": "Wiki",
+  "Buildings": "Buildings",
+  "Events": "Events",
+  "Items": "Items",
+  "Administration": "Administration",
+  "rivalbattles_desc": "Rival Battles",
+  "rivalbattles_link": "https://galaxylife.fandom.com/wiki/Rival_Battles",
+  "rivalbattles_title": "Rival Battles"
 }

@@ -282,8 +282,17 @@
   "sphere_title": "Esfera",
   "bluetrap_title": "Armadilha Azul",
   "flytrap_title": "Armadilha de mosca",
-  "hallo_title": "Halloween Event",
+  "hallo_title": "Evento de Halloween",
   "hallo_link": "https://galaxylife.fandom.com/wiki/Halloween_Event",
-  "dooms_title": "Doomsday Event",
-  "dooms_link": "https://galaxylife.fandom.com/wiki/Doomsday_Event"
+  "dooms_title": "Evento do Doomsday",
+  "dooms_link": "https://galaxylife.fandom.com/wiki/Doomsday_Event",
+  "Misc": "Diversos",
+  "Wiki": "Wiki",
+  "Buildings": "Edifícios",
+  "Events": "Evento",
+  "Items": "Assunto",
+  "Administration": "Administração",
+  "rivalbattles_desc": "Batalha Rival",
+  "rivalbattles_link": "https://galaxylife.fandom.com/wiki/Rival_Battles",
+  "rivalbattles_title": "Batalha Rival"
 }

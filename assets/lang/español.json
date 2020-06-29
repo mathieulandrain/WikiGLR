@@ -282,8 +282,17 @@
   "sphere_title": "Esfera",
   "bluetrap_title": "Trampa azul",
   "flytrap_title": "Trampa para moscas",
-  "hallo_title": "Halloween Event",
+  "hallo_title": "Evento de Halloween",
   "hallo_link": "https://galaxylife.fandom.com/wiki/Halloween_Event",
-  "dooms_title": "Doomsday Event",
-  "dooms_link": "https://galaxylife.fandom.com/wiki/Doomsday_Event"
+  "dooms_title": "Evento de Doomsday",
+  "dooms_link": "https://galaxylife.fandom.com/wiki/Doomsday_Event",
+  "Misc": "Miscelánea",
+  "Wiki": "Wiki",
+  "Buildings": "Edificios",
+  "Events": "Evento",
+  "Items": "Asunto",
+  "Administration": "Administración",
+  "rivalbattles_desc": "Batalla Rival",
+  "rivalbattles_link": "https://galaxylife.fandom.com/wiki/Rival_Battles",
+  "rivalbattles_title": "Batalla Rival"
 }

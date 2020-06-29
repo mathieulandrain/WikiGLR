@@ -75,7 +75,7 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.help = {
   name: "buildings",
-  aliases: ["building", "Gebäude", "Edificios", ""],
+  aliases: ["building", "Gebäude", "Edificios"],
   category: "📜 - wiki",
   description: `${english.buildings_desc}`,
   cooldown: 0,

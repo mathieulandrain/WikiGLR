@@ -50,9 +50,21 @@ module.exports.run = async (bot, message, args) => {
           .filter((cat) => cat.help.category === category.toLowerCase())
           .map((cmd) => cmd.help.name)
       );
+
+      let category_name = "";
+      var justEmoteBeforeCat = category.slice(0, 5);
+      var justCat = category.slice(4);
+
+      var link = "";
+      link = "./cmds/" + category;
+      category_name =
+        justEmoteBeforeCat +
+        eval(`lang.${justCat}`) +
+        " - " +
+        fs.readdirSync(`${link}`).length;
       embed
         .addField(
-          `${category}`,
+          `${category_name}`,
           `${bot.commands
             .filter((cat) => cat.help.category === category.toLowerCase())
             .map((cmd) => `\`\`${cmd.help.name}\`\``)
