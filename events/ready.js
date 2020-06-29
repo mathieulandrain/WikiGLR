@@ -1,5 +1,4 @@
 const { default_prefix } = require("../config.json");
-const db = require("quick.db");
 
 module.exports = async (bot, message) => {
   console.log(`(NoLimitv2): En ligne`);

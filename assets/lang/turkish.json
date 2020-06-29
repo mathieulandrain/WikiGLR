@@ -9,6 +9,12 @@
   "misc_desc": "GLR hakkında bilgi döndürür",
   "buildings_desc": "GLR hakkında bilgi döndürür",
   "troops_desc": "GLR hakkında bilgi döndürür",
+  "doomsday_desc": "GLR hakkında bilgi döndürür",
+  "halloween_desc": "GLR hakkında bilgi döndürür",
+  "othersitems_desc": "GLR hakkında bilgi döndürür",
+  "troopsitems_desc": "GLR hakkında bilgi döndürür",
+  "workeritems_desc": "GLR hakkında bilgi döndürür",
+  "workshopitems_desc": "GLR hakkında bilgi döndürür",
   "bazooka_desc": "Burada birliklerin sayfalarına erişebileceksiniz.",
   "colossus_desc": "Burada birliklerin sayfalarına erişebileceksiniz.",
   "falcon_desc": "Burada birliklerin sayfalarına erişebileceksiniz.",
@@ -275,5 +281,9 @@
   "apprentice_title": "Arkadaşlık taşı",
   "sphere_title": "Küre",
   "bluetrap_title": "Mavi Tuzak",
-  "flytrap_title": "Uçan Tuzak"
+  "flytrap_title": "Uçan Tuzak",
+  "hallo_title": "Halloween Event",
+  "hallo_link": "https://galaxylife.fandom.com/wiki/Halloween_Event",
+  "dooms_title": "Doomsday Event",
+  "dooms_link": "https://galaxylife.fandom.com/wiki/Doomsday_Event"
 }

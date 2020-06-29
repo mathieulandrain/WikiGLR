@@ -9,6 +9,12 @@
   "misc_desc": "Daje informacje na temat Galaxy Life Reborn",
   "buildings_desc": "Daje informacje na temat Galaxy Life Reborn",
   "troops_desc": "Daje informacje na temat Galaxy Life Reborn",
+  "doomsday_desc": "Daje informacje na temat Galaxy Life Reborn",
+  "halloween_desc": "Daje informacje na temat Galaxy Life Reborn",
+  "othersitems_desc": "Daje informacje na temat Galaxy Life Reborn",
+  "troopsitems_desc": "Daje informacje na temat Galaxy Life Reborn",
+  "workeritems_desc": "Daje informacje na temat Galaxy Life Reborn",
+  "workshopitems_desc": "Daje informacje na temat Galaxy Life Reborn",
   "bazooka_desc": "Tutaj będziesz mieć dostęp do stron jednostek.",
   "colossus_desc": "Tutaj będziesz mieć dostęp do stron jednostek.",
   "falcon_desc": "Tutaj będziesz mieć dostęp do stron jednostek.",
@@ -275,5 +281,9 @@
   "apprentice_title": "Kamień przyjaźni",
   "sphere_title": "Sfera",
   "bluetrap_title": "Niebieska pułapka",
-  "flytrap_title": "Pułapka na muchy"
+  "flytrap_title": "Pułapka na muchy",
+  "hallo_title": "Halloween Event",
+  "hallo_link": "https://galaxylife.fandom.com/wiki/Halloween_Event",
+  "dooms_title": "Doomsday Event",
+  "dooms_link": "https://galaxylife.fandom.com/wiki/Doomsday_Event"
 }

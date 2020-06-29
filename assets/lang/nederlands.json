@@ -9,6 +9,12 @@
   "misc_desc": "Geeft info over GLR",
   "buildings_desc": "Geeft info over GLR",
   "troops_desc": "Geeft info over GLR",
+  "doomsday_desc": "Geeft info over GLR",
+  "halloween_desc": "Geeft info over GLR",
+  "othersitems_desc": "Geeft info over GLR",
+  "troopsitems_desc": "Geeft info over GLR",
+  "workeritems_desc": "Geeft info over GLR",
+  "workshopitems_desc": "Geeft info over GLR",
   "bazooka_desc": "Hier zal je toegang hebben tot de pagina's over de troepen.",
   "colossus_desc": "Hier zal je toegang hebben tot de pagina's over de troepen.",
   "falcon_desc": "Hier zal je toegang hebben tot de pagina's over de troepen.",
@@ -275,5 +281,9 @@
   "apprentice_title": "Vriendschapssteen",
   "sphere_title": "Bol",
   "bluetrap_title": "Blauwe Val",
-  "flytrap_title": "Vliegenvanger"
+  "flytrap_title": "Vliegenvanger",
+  "hallo_title": "Halloween Event",
+  "hallo_link": "https://galaxylife.fandom.com/wiki/Halloween_Event",
+  "dooms_title": "Doomsday Event",
+  "dooms_link": "https://galaxylife.fandom.com/wiki/Doomsday_Event"
 }

@@ -9,6 +9,12 @@
   "misc_desc": "Restituisce informazioni su GLR",
   "buildings_desc": "Restituisce informazioni su GLR",
   "troops_desc": "Restituisce informazioni su GLR",
+  "doomsday_desc": "Restituisce informazioni su GLR",
+  "halloween_desc": "Restituisce informazioni su GLR",
+  "othersitems_desc": "Restituisce informazioni su GLR",
+  "troopsitems_desc": "Restituisce informazioni su GLR",
+  "workeritems_desc": "Restituisce informazioni su GLR",
+  "workshopitems_desc": "Restituisce informazioni su GLR",
   "bazooka_desc": "Qui avrai accesso alle pagine per le truppe.",
   "colossus_desc": "Qui avrai accesso alle pagine per le truppe.",
   "falcon_desc": "Qui avrai accesso alle pagine per le truppe.",
@@ -275,5 +281,9 @@
   "apprentice_title": "Pietra dell'amicizia",
   "sphere_title": "Sfera",
   "bluetrap_title": "Trappola blu",
-  "flytrap_title": "Trappola per mosche"
+  "flytrap_title": "Trappola per mosche",
+  "hallo_title": "Halloween Event",
+  "hallo_link": "https://galaxylife.fandom.com/wiki/Halloween_Event",
+  "dooms_title": "Doomsday Event",
+  "dooms_link": "https://galaxylife.fandom.com/wiki/Doomsday_Event"
 }

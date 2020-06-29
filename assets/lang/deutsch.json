@@ -9,6 +9,12 @@
   "misc_desc": "Gibt Informationen zu GLR zurück",
   "buildings_desc": "Gibt Informationen zu GLR zurück",
   "troops_desc": "Gibt Informationen zu GLR zurück",
+  "doomsday_desc": "Gibt Informationen zu GLR zurück",
+  "halloween_desc": "Gibt Informationen zu GLR zurück",
+  "othersitems_desc": "Gibt Informationen zu GLR zurück",
+  "troopsitems_desc": "Gibt Informationen zu GLR zurück",
+  "workeritems_desc": "Gibt Informationen zu GLR zurück",
+  "workshopitems_desc": "Gibt Informationen zu GLR zurück",
   "bazooka_desc": "Hier haben Sie Zugriff auf die Seiten für die Truppen.",
   "colossus_desc": "Hier haben Sie Zugriff auf die Seiten für die Truppen.",
   "falcon_desc": "Hier haben Sie Zugriff auf die Seiten für die Truppen.",
@@ -275,5 +281,9 @@
   "apprentice_title": "Stein der Freundschaft",
   "sphere_title": "Bereich",
   "bluetrap_title": "Blaue Falle",
-  "flytrap_title": "Fliegenfalle"
+  "flytrap_title": "Fliegenfalle",
+  "hallo_title": "Halloween Event",
+  "hallo_link": "https://galaxylife.fandom.com/wiki/Halloween_Event",
+  "dooms_title": "Doomsday Event",
+  "dooms_link": "https://galaxylife.fandom.com/wiki/Doomsday_Event"
 }

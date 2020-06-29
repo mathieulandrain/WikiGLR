@@ -29,5 +29,9 @@
   "friendship": "https://cdn.discordapp.com/attachments/725904352434454548/725906506918395964/unknown.png",
   "sphere": "https://cdn.discordapp.com/attachments/725904352434454548/725906882086043708/unknown.png",
   "bluetrap": "https://cdn.discordapp.com/attachments/725904352434454548/725907485990453258/unknown.png",
-  "flytrap": "https://cdn.discordapp.com/attachments/725904352434454548/725907565992738887/unknown.png"
+  "flytrap": "https://cdn.discordapp.com/attachments/725904352434454548/725907565992738887/unknown.png",
+  "zombie": "https://cdn.discordapp.com/attachments/725904352434454548/726961160150057091/unknown.png",
+  "halloitems": "https://cdn.discordapp.com/attachments/725904352434454548/726961279360827502/unknown.png",
+  "golem": "https://cdn.discordapp.com/attachments/725904352434454548/726963674090307734/unknown.png",
+  "doomsitems": "https://cdn.discordapp.com/attachments/725904352434454548/726963750032113684/unknown.png"
 }

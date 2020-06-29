@@ -9,6 +9,12 @@
   "misc_desc": "Returns info on GLR",
   "buildings_desc": "Returns info on GLR",
   "troops_desc": "Returns info on GLR",
+  "doomsday_desc": "Returns info on GLR",
+  "halloween_desc": "Returns info on GLR",
+  "othersitems_desc": "Returns info on GLR",
+  "troopsitems_desc": "Returns info on GLR",
+  "workeritems_desc": "Returns info on GLR",
+  "workshopitems_desc": "Returns info on GLR",
   "bazooka_desc": "Here you will have access to the pages for the troops.",
   "colossus_desc": "Here you will have access to the pages for the troops.",
   "falcon_desc": "Here you will have access to the pages for the troops.",
@@ -247,7 +253,7 @@
   "tips11": "Don't spend your chips anyhow, it's a scarce resource.",
   "tips12": "Protect your banks and silos, that's where the resources are stored.",
   "tips13": "Try to have as many workers as possible, you'll save time.",
-  "tips14": "If you have any questions, don't hesitate to ask about GLR cats.",
+  "tips14": "If you have any questions, don't hesitate to ask about GLR chats.",
   "tips15": "Mana Lights can be recovered by destroying bases of level 4 or higher.",
   "tips16": "Upgrade your troops to be more efficient, but be careful that they are not too expensive for your level.",
   "tips17": "Attack Reptice to unlock the cryogenic towers\n⚠️ Unavailable at the moment ⚠️",
@@ -276,5 +282,9 @@
   "apprentice_title": "Friendship Stone",
   "sphere_title": "Sphere",
   "bluetrap_title": "Blue Trap",
-  "flytrap_title": "Fly Trap"
+  "flytrap_title": "Fly Trap",
+  "hallo_title": "Halloween Event",
+  "hallo_link": "https://galaxylife.fandom.com/wiki/Halloween_Event",
+  "dooms_title": "Doomsday Event",
+  "dooms_link": "https://galaxylife.fandom.com/wiki/Doomsday_Event"
 }

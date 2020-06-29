@@ -9,6 +9,12 @@
   "misc_desc": "Renvois des informations sur GLR",
   "buildings_desc": "Renvois des informations sur GLR",
   "troops_desc": "Renvois des informations sur GLR",
+  "doomsday_desc": "Renvois des informations sur GLR",
+  "halloween_desc": "Renvois des informations sur GLR",
+  "othersitems_desc": "Renvois des informations sur GLR",
+  "troopsitems_desc": "Renvois des informations sur GLR",
+  "workeritems_desc": "Renvois des informations sur GLR",
+  "workshopitems_desc": "Renvois des informations sur GLR",
   "bazooka_desc": "Ici vous aurez accès aux pages pour les troupes",
   "colossus_desc": "Ici vous aurez accès aux pages pour les troupes",
   "falcon_desc": "Ici vous aurez accès aux pages pour les troupes",
@@ -275,5 +281,9 @@
   "apprentice_title": "Pierre d'amitié",
   "sphere_title": "Sphere",
   "bluetrap_title": "Blue Trap",
-  "flytrap_title": "Fly Trap"
+  "flytrap_title": "Fly Trap",
+  "hallo_title": "Halloween Event",
+  "hallo_link": "https://galaxylife.fandom.com/wiki/Halloween_Event",
+  "dooms_title": "Doomsday Event",
+  "dooms_link": "https://galaxylife.fandom.com/wiki/Doomsday_Event"
 }
