@@ -11,7 +11,11 @@ module.exports.run = async (bot, message, args) => {
   if (message.author.id !== "257173141489582085") return;
   if (await model1.findOne({ ID: `${message.guild.id}` })) return;
   bot.guilds.cache.forEach((guild) => {
-    model1.create({ ID: `${guild.id}`, langue: "english" });
+    model1.findOne({ ID: `${guild.id}` }, function (err, data) {
+      if (!data) {
+        model1.create({ ID: `${guild.id}`, langue: "english" });
+      }
+    });
   });
 };
 
