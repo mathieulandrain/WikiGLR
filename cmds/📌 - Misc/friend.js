@@ -5,9 +5,8 @@ const english = require("../../assets/lang/english.json");
 const model1 = require("../../dbFile.js");
 const fs = require("fs");
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (bot, message, args, Prefix, lang) => {
   let infoServ = await model1.findOne({ ID: `${message.guild.id}` });
-  let lang = await checklanguage(model1, fs, infoServ.langue);
   const embed = new MessageEmbed()
     .setColor(colours.green_light)
     .setAuthor(bot.user.username, bot.user.avatarURL())

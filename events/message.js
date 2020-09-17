@@ -4,6 +4,7 @@ const { default_lang } = require("../config.json");
 const emotes = require("../assets/json/emotes.json");
 const moment = require("moment");
 const model1 = require("../dbFile.js");
+const chan = require("../assets/json/channels.json");
 const english = require("../assets/lang/english.json");
 moment.locale("fr");
 const cdseconds = 5;
@@ -19,7 +20,10 @@ module.exports = async (bot, message) => {
     infoServ.langue = default_lang;
     infoServ.prefix = default_prefix;
   }
-  let lang = await checklanguage(model1, fs, infoServ.langue);
+  var check_lang;
+  if (chan[message.channel.id])
+    var check_lang = chan[message.channel.id].langue;
+  let lang = await checklanguage(model1, fs, check_lang || infoServ.langue);
   let prefix = infoServ.prefix;
 
   if (message.mentions.users.first() === bot.user) {
@@ -67,8 +71,11 @@ module.exports = async (bot, message) => {
 
   tStamps.set(message.author.id, timeNow);
   setTimeout(() => tStamps.delete(message.author.id), cdAmount);
+  //
 
-  command.run(bot, message, args, prefix);
+  //
+
+  command.run(bot, message, args, prefix, lang);
   function checklanguage(model1, fs, language) {
     return new Promise(function (resolve, reject) {
       fs.readFile(`./assets/lang/${language}.json`, async (err, data) => {

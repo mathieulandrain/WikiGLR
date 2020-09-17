@@ -6,14 +6,46 @@
   "galaxy_life_bases": "638860305832869938",
   "galaxy_life_fanart": "641026772388806656",
   "donator_chat": "697532898613395497",
-  "chat_english": "638859930736132097",
-  "chat_français": "638859958355492894",
-  "chat_polski": "638860057773342730",
-  "chat_español": "638860043764105229",
-  "chat_nederlands": "638860091189231629",
-  "chat_deutsch": "638860103415496715",
-  "chat_italiano": "704655147522981983",
-  "chat_portugês": "714930835576586350",
+  "638859930736132097": {
+    "langue": "english",
+    "name": "chat_english"
+  },
+  "638859958355492894": {
+    "langue": "french",
+    "name": "chat_french"
+  },
+  "638860057773342730": {
+    "langue": "polski",
+    "name": "chat_polski"
+  },
+  "638860043764105229": {
+    "langue": "español",
+    "name": "chat_español"
+  },
+  "638860091189231629": {
+    "langue": "nederlands",
+    "name": "chat_nederlands"
+  },
+  "638860103415496715": {
+    "langue": "deutsch",
+    "name": "chat_deutsch"
+  },
+  "704655147522981983": {
+    "langue": "italiano",
+    "name": "chat_italiano"
+  },
+  "714930835576586350": {
+    "langue": "portugês",
+    "name": "chat_portugês"
+  },
+  "692564834184855575": {
+    "langue": "french",
+    "name": "chat_général"
+  },
+  "702077596824895548": {
+    "langue": "español",
+    "name": "chat_api"
+  },
   "the_meme_room": "638860233388589056",
   "vc_music": "638859384814043136",
   "bots_and_spam": "663702472329658386",
