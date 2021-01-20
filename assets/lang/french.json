@@ -187,7 +187,7 @@
   "piegeVolant": "Piège volant",
   "friends": "Amis",
   "Howto": "Comment inviter des amis:",
-  "friendsDescription": "Si vous souhaitez que des personnes choisies au hasard vous ajoutent comme ami, allez à <#700717164273074266> et tapez !profile <votre nom d'utilisateur>.\nSi vous souhaitez que des personnes spécifiques vous ajoutent, il vous suffit de leur donner votre [web.galaxylifereborn.com/profile/<votre nom d'utilisateur>](https://web.galaxylifereborn.com/). \n\n⚠️ - Veuillez ne pas inclure le < >, et notez que le site web est sensible à la casse.",
+  "friendsDescription": "Si vous souhaitez que des personnes choisies au hasard vous ajoutent comme ami, allez à <#700717164273074266> et tapez !profile <votre nom d'utilisateur>.\nSi vous souhaitez que des personnes spécifiques vous ajoutent, il vous suffit de leur donner votre [web.galaxylifereborn.com/profile/<votre nom d'utilisateur>](https://web.galaxylifereborn.com/) ou d'utiliser la fonction recherche sur le [site](https://web.galaxylifereborn.com/). \n\n⚠️ - Veuillez ne pas inclure le < >, et notez que le site web est sensible à la casse.",
   "PA": "Pocket Adventures",
   "HowtoPA": "Comment jouer à Pocket Adventures :",
   "PADesc": "La Pocket Edition est la version mobile de Galaxy Life Reborn, elle peut être installée grâce à l'apk disponible sur le [site](https://galaxylifereborn.com/home).\nElle n'est donc pour l'instant disponible que sur android.",
